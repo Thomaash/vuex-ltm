@@ -24,7 +24,7 @@ const ltmDefaults = {
   execute: simplyExecute,
   filter: dummyFilter,
   merge: replace,
-  reduce: saveAll,
+  reduce: saveAll
 }
 
 const data = {
