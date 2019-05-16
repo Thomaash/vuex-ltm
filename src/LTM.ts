@@ -1,22 +1,17 @@
 import { MutationPayload, Plugin, Store } from 'vuex'
 
-import { AsyncStorage, inMemoryStorage } from './storages'
-import { Executor, simplyExecute } from './executors'
-import { Filter, dummyFilter } from './filters'
-import { Merger, replace } from './mergers'
-import { Reducer, saveAll } from './reducers'
-
-/**
- * @ignore
- */
-const defaultKey = 'VUEX_LTM'
+import { AsyncStorage } from './storages'
+import { Executor } from './executors'
+import { Filter } from './filters'
+import { Merger } from './mergers'
+import { Reducer } from './reducers'
 
 export interface LTMConfig<S> {
-  execute?: Executor
-  filter?: Filter
-  merge?: Merger<S>
-  reduce?: Reducer<S>
-  storage?: AsyncStorage<Partial<S>>
+  execute: Executor
+  filter: Filter
+  merge: Merger<S>
+  reduce: Reducer<S>
+  storage: AsyncStorage<Partial<S>>
 }
 
 /**
@@ -47,15 +42,7 @@ export class LTM<S> {
    * @param reduce - [[Reducer]] that picks which parts of the state will be persisted.
    * @param storage - [[AsyncStorage]] that saves state data to the store.
    */
-  public constructor (
-    {
-      execute = simplyExecute,
-      filter = dummyFilter,
-      merge = replace,
-      reduce = saveAll,
-      storage = inMemoryStorage(defaultKey)
-    }: LTMConfig<S> = {}
-  ) {
+  public constructor ({ execute, filter, merge, reduce, storage }: LTMConfig<S>) {
     this.execute = execute
     this.filter = filter
     this.merge = merge

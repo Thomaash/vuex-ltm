@@ -1,7 +1,12 @@
 import { expect } from '#/helpers/sinon'
 import { getNewVuex } from '#/helpers/vuex'
 
-import { AsyncStorage } from '@/storages/GenericStorageWrapper'
+import { AsyncStorage } from '@/storages'
+import { simplyExecute } from '@/executors'
+import { dummyFilter } from '@/filters'
+import { replace } from '@/mergers'
+import { saveAll } from '@/reducers'
+
 import { LTM } from '@/LTM'
 
 export * from '#/helpers/sinon'
@@ -13,6 +18,13 @@ export type Storage = AsyncStorage<Data>
 export interface Data {
   foo?: string
   bar?: string
+}
+
+const ltmDefaults = {
+  execute: simplyExecute,
+  filter: dummyFilter,
+  merge: replace,
+  reduce: saveAll,
 }
 
 const data = {
@@ -36,6 +48,7 @@ export function testAsyncStorage (
       await setState(key, data.a())
 
       const ltm = new LTM<Data>({
+        ...ltmDefaults,
         storage: getNewStorage()
       })
 
@@ -57,6 +70,7 @@ export function testAsyncStorage (
       await setState(key, data.b())
 
       const ltm = new LTM<Data>({
+        ...ltmDefaults,
         storage: getNewStorage()
       })
 
@@ -78,6 +92,7 @@ export function testAsyncStorage (
       await delState(key)
 
       const ltm = new LTM<Data>({
+        ...ltmDefaults,
         storage: getNewStorage()
       })
 
@@ -99,6 +114,7 @@ export function testAsyncStorage (
       await delState(key)
 
       const ltm = new LTM<Data>({
+        ...ltmDefaults,
         storage: getNewStorage()
       })
 
