@@ -1,8 +1,4 @@
-import { LTM } from './LTM'
-
-export default LTM
-export { LTM }
-
+export * from './LTM'
 export * from './executors'
 export * from './filters'
 export * from './mergers'
