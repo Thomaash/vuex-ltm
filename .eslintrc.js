@@ -29,6 +29,9 @@ module.exports = {
     // delete in the future?
     '@typescript-eslint/no-explicit-any': 'off',
 
+    // custom
+    'array-bracket-spacing': ['error', 'never'],
+
     // default
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
@@ -40,7 +43,8 @@ module.exports = {
       'import/export': 'off'
     }
   }, {
-    files: ['test/**/*', '*.spec.ts'],
+    // Tests
+    files: ['test/**/*'],
     env: {
       node: true,
       mocha: true
@@ -48,6 +52,15 @@ module.exports = {
     rules: {
       // Chai uses expressions like expect(…).to.be.true
       'no-unused-expressions': 'off'
+    }
+  }, {
+    // Config files in the root of the project
+    files: ['!*/**'],
+    env: {
+      node: true
+    },
+    rules: {
+      '@typescript-eslint/no-var-requires': 'off'
     }
   }],
   parser: '@typescript-eslint/parser'
