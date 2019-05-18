@@ -1,21 +1,20 @@
 {
     "compilerOptions": {
-        "target": "esnext",
-        "module": "es2015",
-        "esModuleInterop": true,
-        "moduleResolution": "node",
-        "declaration": true,
-        "sourceMap": true,
-        "declarationMap": true,
-        "outDir": "./dist",
-        "strict": true,
         "baseUrl": ".",
+        "declaration": false,
+        "esModuleInterop": true,
+        "module": "es2015",
+        "moduleResolution": "node",
+        "outDir": "dist/lib",
         "paths": {
             "@/*": ["src/*"],
             "#/*": ["test/*"]
         },
+        "sourceMap": true,
+        "strict": true,
+        "target": "esnext",
         "typeRoots": ["./types", "node_modules/@types"]
     },
-    "include": ["src", "test"],
-    "exclude": ["node_modules", "**/__tests__/*"]
+    "exclude": ["node_modules", "**/__tests__/*"],
+    "include": ["src", "test"]
 }
