@@ -8,9 +8,11 @@ import { localStorageWrapper } from './localStorageWrapper'
  * @param toInner - Custom conversion from state object to string (default is JSON.stringify).
  * @param toOuter - Custom conversion from string to state object (default is JSON.parse).
  *
+ * @typeparam Outer - The Vuex state type.
+ *
  * @public
  */
-export function localStorage<Outer> (
+export function localStorage<Outer = any> (
   key: string,
   toInner?: ToInner<Outer, string>,
   toOuter?: ToOuter<Outer, string>

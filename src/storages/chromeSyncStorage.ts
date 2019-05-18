@@ -10,9 +10,12 @@ import { chromeStorageWrapper } from './chromeStorageWrapper'
  * @param toInner - Custom conversion from state object to storage object (default is pass through).
  * @param toOuter - Custom conversion from storage object to state object (default is pass through).
  *
+ * @typeparam Outer - The Vuex state type.
+ * @typeparam Inner - The storage state type.
+ *
  * @public
  */
-export function chromeSyncStorage<Outer, Inner> (
+export function chromeSyncStorage<Outer = any, Inner = Outer> (
   key: string,
   toInner?: ToInner<Outer, Inner>,
   toOuter?: ToOuter<Outer, Inner>

@@ -18,14 +18,16 @@ export interface StringStorage {
  * @param toInner - Custom conversion from state object to string (default is JSON.stringify).
  * @param toOuter - Custom conversion from string to state object (default is JSON.parse).
  *
+ * @typeparam Outer - The Vuex state type.
+ *
  * @public
  */
-export function localStorageWrapper<T> (
+export function localStorageWrapper<Outer = any> (
   key: string,
   storage: StringStorage,
-  toInner: ToInner<T, string> = JSON.stringify.bind(JSON),
-  toOuter: ToOuter<T, string> = JSON.parse.bind(JSON)
-): GenericStorageWrapper<T, string> {
+  toInner: ToInner<Outer, string> = JSON.stringify.bind(JSON),
+  toOuter: ToOuter<Outer, string> = JSON.parse.bind(JSON)
+): GenericStorageWrapper<Outer, string> {
   return new GenericStorageWrapper(
     key,
     function setItem (key, data): void {

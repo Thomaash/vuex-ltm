@@ -80,7 +80,7 @@ export type ToOuter<Outer, Inner> = (data: Inner) => Outer | null
  * @typeparam Outer - The Vuex state type.
  * @typeparam Inner - The storage state type.
  */
-export class GenericStorageWrapper<Outer, Inner> implements AsyncStorage<Outer> {
+export class GenericStorageWrapper<Outer = any, Inner = Outer> implements AsyncStorage<Outer> {
   private key: string
   private setItem: SetItem<Inner>
   private getItem: GetItem<Inner>

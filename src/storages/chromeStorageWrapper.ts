@@ -14,9 +14,12 @@ interface ChromeStorage {
  * @param toInner - Custom conversion from state object to storage object (default is pass through).
  * @param toOuter - Custom conversion from storage object to state object (default is pass through).
  *
+ * @typeparam Outer - The Vuex state type.
+ * @typeparam Inner - The storage state type.
+ *
  * @public
  */
-export function chromeStorageWrapper<Outer, Inner> (
+export function chromeStorageWrapper<Outer = any, Inner = Outer> (
   key: string,
   storage: ChromeStorage,
   toInner: ToInner<Outer, Inner> = (data): Inner => data as unknown as Inner,

@@ -6,28 +6,30 @@ import { GenericStorageWrapper } from './GenericStorageWrapper'
  * @remarks
  * Useful mainly for testing and development as it doesn't persist anything.
  *
+ * @typeparam Outer - The Vuex state type.
+ *
  * @public
  */
-export function inMemoryStorage<T> (
+export function inMemoryStorage<Outer = any> (
   key: string
-): GenericStorageWrapper<T, T> {
-  const map = new Map<string, T>()
+): GenericStorageWrapper<Outer> {
+  const map = new Map<string, Outer>()
 
   return new GenericStorageWrapper(
     key,
     function setItem (key, data): void {
       map.set(key, data)
     },
-    function getItem (key): T | null {
+    function getItem (key): Outer | null {
       const v = map.get(key)
       return v === undefined
         ? null
         : v
     },
-    function toInner (outer): T {
+    function toInner (outer): Outer {
       return outer
     },
-    function toOuter (inner): T | null {
+    function toOuter (inner): Outer | null {
       return inner
     }
   )
