@@ -22,7 +22,7 @@ export interface StringStorage {
  *
  * @public
  */
-export function localStorageWrapper<Outer = any> (
+export function localStorageWrapper<Outer> (
   key: string,
   storage: StringStorage,
   toInner: ToInner<Outer, string> = JSON.stringify.bind(JSON),

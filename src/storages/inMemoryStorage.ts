@@ -10,7 +10,7 @@ import { GenericStorageWrapper } from './GenericStorageWrapper'
  *
  * @public
  */
-export function inMemoryStorage<Outer = any> (
+export function inMemoryStorage<Outer> (
   key: string
 ): GenericStorageWrapper<Outer> {
   const map = new Map<string, Outer>()

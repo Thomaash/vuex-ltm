@@ -15,7 +15,7 @@ import { chromeStorageWrapper } from './chromeStorageWrapper'
  *
  * @public
  */
-export function chromeSyncStorage<Outer = any, Inner = Outer> (
+export function chromeSyncStorage<Outer, Inner = Outer> (
   key: string,
   toInner?: ToInner<Outer, Inner>,
   toOuter?: ToOuter<Outer, Inner>

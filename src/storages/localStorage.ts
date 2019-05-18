@@ -12,7 +12,7 @@ import { localStorageWrapper } from './localStorageWrapper'
  *
  * @public
  */
-export function localStorage<Outer = any> (
+export function localStorage<Outer> (
   key: string,
   toInner?: ToInner<Outer, string>,
   toOuter?: ToOuter<Outer, string>

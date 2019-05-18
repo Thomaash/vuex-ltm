@@ -15,7 +15,7 @@ import { chromeStorageWrapper } from './chromeStorageWrapper'
  *
  * @public
  */
-export function chromeLocalStorage<Outer = any, Inner = Outer> (
+export function chromeLocalStorage<Outer, Inner = Outer> (
   key: string,
   toInner?: ToInner<Outer, Inner>,
   toOuter?: ToOuter<Outer, Inner>

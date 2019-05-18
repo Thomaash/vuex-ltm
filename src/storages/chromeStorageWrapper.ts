@@ -19,7 +19,7 @@ interface ChromeStorage {
  *
  * @public
  */
-export function chromeStorageWrapper<Outer = any, Inner = Outer> (
+export function chromeStorageWrapper<Outer, Inner = Outer> (
   key: string,
   storage: ChromeStorage,
   toInner: ToInner<Outer, Inner> = (data): Inner => data as unknown as Inner,
