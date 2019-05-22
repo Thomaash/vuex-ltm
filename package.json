@@ -1,14 +1,15 @@
 {
     "name": "vuex-ltm",
     "version": "1.0.0",
-    "description": "",
-    "keywords": [],
+    "description": "Vuex - Long Term Memory: Async modular persistence for Vuex store.",
+    "keywords": ["Vuex", "persistence"],
     "author": "Tomáš Vyčítal <tom.vycital@gmail.com>",
-    "license": "ISC",
+    "license": "(Apache-2.0 OR ISC)",
     "main": "dist/esnext/esm.js",
     "types": "dist/types",
     "files": [
-        "dist/**/*"
+        "dist/**/*",
+        "LICENSE*"
     ],
     "scripts": {
         "build": "npm run build:code && npm run build:types && npm run build:docs",
@@ -21,7 +22,7 @@
         "fix": "npm run lint -- --fix",
         "lint": "eslint --ext .js,.ts src test *.js",
         "test": "TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha",
-        "testwatch": "TS_NODE_PROJECT='./tsconfig.test.json' mocha --watch"
+        "test-watch": "TS_NODE_PROJECT='./tsconfig.test.json' mocha --watch"
     },
     "babel": {
         "presets": [
