@@ -8,7 +8,7 @@ const payloads = {
   foo: { type: 'foo', payload: {} },
   fooBar: { type: 'foo/bar', payload: {} },
   fooBer: { type: 'foo/ber', payload: {} },
-  fooBor: { type: 'foo/bor', payload: {} },
+  fooBor: { type: 'foo/bor', payload: {} }
 }
 
 describe('Filters', (): void => {
