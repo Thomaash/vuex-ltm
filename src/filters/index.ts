@@ -28,8 +28,14 @@ export function dummyFilter (): boolean {
  *
  * @public
  */
-export function mutationFilter (mutations: string[]): Filter {
-  return function (mutation: MutationPayload): boolean {
-    return mutations.indexOf(mutation.type) >= 0
+export function mutationFilter (mutations: (string | RegExp)[]): Filter {
+  const values = mutations.filter((value): value is string => typeof value === 'string')
+  const regexps = mutations.filter((value): value is RegExp => value instanceof RegExp)
+  return function ({ type }: MutationPayload): boolean {
+    return (
+      values.indexOf(type) >= 0
+    ) || (
+      regexps.some((re): boolean => re.test(type))
+    )
   }
 }
