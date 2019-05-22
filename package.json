@@ -123,7 +123,8 @@
         "vuex": "^3.1.1"
     },
     "dependencies": {
-        "deepmerge": "^3.2.0"
+        "deepmerge": "^3.2.0",
+        "localforage": "^1.7.3"
     },
     "peerDependencies": {
         "vue": "^2.6.10",
