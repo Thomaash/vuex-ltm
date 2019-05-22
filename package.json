@@ -3,8 +3,18 @@
     "version": "1.0.0",
     "description": "Vuex - Long Term Memory: Async modular persistence for Vuex store.",
     "keywords": ["Vuex", "persistence"],
-    "author": "Tomáš Vyčítal <tom.vycital@gmail.com>",
+    "author": {
+        "name": "Tomáš Vyčítal",
+        "email": "tom.vycital@gmail.com",
+        "url": "https://github.com/Thomaash"
+    },
     "license": "(Apache-2.0 OR ISC)",
+    "homepage": "https://github.com/Thomaash/vuex-ltm",
+    "bugs": "https://github.com/Thomaash/vuex-ltm/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Thomaash/vuex-ltm"
+    },
     "main": "dist/esnext/esm.js",
     "types": "dist/types",
     "files": [
