@@ -1,9 +1,9 @@
 import { GenericStorageWrapper, ToInner, ToOuter } from './GenericStorageWrapper'
 
-interface Result { [key: string]: any }
-interface ChromeStorage {
-  get(key: string[], callback: (result: Result) => void): void
-  set(data: Result, callback: () => void): void
+interface StorageItems<T> { [key: string]: T }
+interface ChromeStorage<T> {
+  get(key: string[], callback: (result: StorageItems<T>) => void): void
+  set(data: StorageItems<T>, callback: () => void): void
 }
 
 /**
@@ -21,7 +21,7 @@ interface ChromeStorage {
  */
 export function chromeStorageWrapper<Outer, Inner = Outer> (
   key: string,
-  storage: ChromeStorage,
+  storage: ChromeStorage<Inner>,
   toInner: ToInner<Outer, Inner> = (data): Inner => data as unknown as Inner,
   toOuter: ToOuter<Outer, Inner> = (data): Outer | null => data as unknown as Outer | null
 ): GenericStorageWrapper<Outer, Inner> {
