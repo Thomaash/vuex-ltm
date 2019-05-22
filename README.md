@@ -2,6 +2,8 @@
 
 Async modular persistence for Vuex store.
 
+Documentation: https://thomaash.github.io/vuex-ltm/
+
 ## Simple example
 
 ```javascript
