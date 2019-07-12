@@ -28,7 +28,7 @@ export function pickModules<S> (moduleNames: string[]): Reducer<S> {
   return function (state: S): Partial<S> {
     const reduced: Partial<S> = {}
     moduleNames.forEach((name): void => {
-      if (state.hasOwnProperty(name)) {
+      if (Object.prototype.hasOwnProperty.call(state, name)) {
         (reduced as any)[name] = (state as any)[name]
       }
     })

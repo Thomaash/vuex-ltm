@@ -3,7 +3,7 @@ import { getTestAsyncStorageFunctions } from '#/helpers/localStorage'
 
 import { sessionStorage } from '@/storages/sessionStorage'
 
-const storageFunctions = getTestAsyncStorageFunctions('sessionStorage')
+const storageFunctions = getTestAsyncStorageFunctions<Data>('sessionStorage')
 
 describe('Storages', function (): void {
   describe('sessionStorage', function (): void {

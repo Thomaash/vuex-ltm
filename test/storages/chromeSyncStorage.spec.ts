@@ -3,7 +3,7 @@ import { getTestAsyncStorageFunctions } from '#/helpers/chrome'
 
 import { chromeSyncStorage } from '@/storages/chromeSyncStorage'
 
-const storageFunctions = getTestAsyncStorageFunctions('sync')
+const storageFunctions = getTestAsyncStorageFunctions<Data>('sync')
 
 describe('Storages', function (): void {
   describe('chromeSyncStorage', function (): void {
