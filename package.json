@@ -1,6 +1,6 @@
 {
     "name": "vuex-ltm",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Vuex - Long Term Memory: Async modular persistence for Vuex store.",
     "keywords": [
         "Vuex",
