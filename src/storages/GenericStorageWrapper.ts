@@ -23,11 +23,9 @@ export interface AsyncStorage<T> {
  *
  * @public
  */
-export type SetItem<T> = (
-  (key: string, data: T) => Promise<void>
-) | (
-  (key: string, data: T) => void
-)
+export type SetItem<T> =
+  | ((key: string, data: T) => Promise<void>)
+  | ((key: string, data: T) => void)
 
 /**
  * Handles persisted state loading.
@@ -40,11 +38,9 @@ export type SetItem<T> = (
  *
  * @public
  */
-export type GetItem<T> = (
-  (key: string) => Promise<T | null>
-) | (
-  (key: string) => T | null
-)
+export type GetItem<T> =
+  | ((key: string) => Promise<T | null>)
+  | ((key: string) => T | null)
 
 /**
  * Converts outer state (used in Vuex) to inner state (persisted), e.g. JSON.stringify(…).
@@ -80,14 +76,15 @@ export type ToOuter<Outer, Inner> = (data: Inner) => Outer | null
  * @typeparam Outer - The Vuex state type.
  * @typeparam Inner - The storage state type.
  */
-export class GenericStorageWrapper<Outer, Inner = Outer> implements AsyncStorage<Outer> {
+export class GenericStorageWrapper<Outer, Inner = Outer>
+  implements AsyncStorage<Outer> {
   private key: string
   private setItem: SetItem<Inner>
   private getItem: GetItem<Inner>
   private toInner: ToInner<Outer, Inner>
   private toOuter: ToOuter<Outer, Inner>
 
-  public constructor (
+  public constructor(
     key: string,
     setItem: SetItem<Inner>,
     getItem: GetItem<Inner>,
@@ -101,12 +98,12 @@ export class GenericStorageWrapper<Outer, Inner = Outer> implements AsyncStorage
     this.toOuter = toOuter
   }
 
-  public async save (outer: Outer): Promise<void> {
+  public async save(outer: Outer): Promise<void> {
     const inner = this.toInner(outer)
     this.setItem(this.key, inner)
   }
 
-  public async load (): Promise<Outer | null> {
+  public async load(): Promise<Outer | null> {
     const inner = await this.getItem(this.key)
     if (inner) {
       return this.toOuter(inner)

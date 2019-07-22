@@ -1,6 +1,11 @@
 import { expect } from 'chai'
 
-import { configurableDeepMerge, deepMerge, replace, shallowMerge } from '@/mergers'
+import {
+  configurableDeepMerge,
+  deepMerge,
+  replace,
+  shallowMerge,
+} from '@/mergers'
 
 interface State {
   foo?: 'loaded' | 'previous'
@@ -12,24 +17,24 @@ interface State {
   }
 }
 
-function getLoaded (): State {
+function getLoaded(): State {
   return {
     foo: 'loaded',
     array: [7],
     object: {
-      foo: 'loaded'
-    }
+      foo: 'loaded',
+    },
   }
 }
-function getPrevious (): State {
+function getPrevious(): State {
   return {
     foo: 'previous',
     bar: 'previous',
     array: [0, 1, 2],
     object: {
       foo: 'previous',
-      bar: 'previous'
-    }
+      bar: 'previous',
+    },
   }
 }
 
@@ -39,8 +44,7 @@ describe('Mergers', (): void => {
       const loaded = {}
       const previous = {}
 
-      expect(replace(loaded, previous))
-        .to.equal(loaded)
+      expect(replace(loaded, previous)).to.equal(loaded)
     })
   })
 
@@ -58,15 +62,14 @@ describe('Mergers', (): void => {
       const loaded = getLoaded()
       const previous = getPrevious()
 
-      expect(shallowMerge(loaded, previous))
-        .to.eql({
+      expect(shallowMerge(loaded, previous)).to.eql({
+        foo: 'loaded',
+        bar: 'previous',
+        array: [7],
+        object: {
           foo: 'loaded',
-          bar: 'previous',
-          array: [7],
-          object: {
-            foo: 'loaded'
-          }
-        })
+        },
+      })
     })
   })
 
@@ -84,16 +87,15 @@ describe('Mergers', (): void => {
       const loaded = getLoaded()
       const previous = getPrevious()
 
-      expect(deepMerge(loaded, previous))
-        .to.eql({
+      expect(deepMerge(loaded, previous)).to.eql({
+        foo: 'loaded',
+        bar: 'previous',
+        array: [7],
+        object: {
           foo: 'loaded',
           bar: 'previous',
-          array: [7],
-          object: {
-            foo: 'loaded',
-            bar: 'previous'
-          }
-        })
+        },
+      })
     })
   })
 
@@ -102,10 +104,8 @@ describe('Mergers', (): void => {
       const loaded = {}
       const previous = {}
 
-      expect(
-        configurableDeepMerge({
-        })(loaded, previous)
-      ).to.not.equal(loaded)
+      expect(configurableDeepMerge({})(loaded, previous))
+        .to.not.equal(loaded)
         .and.to.not.equal(previous)
     })
 
@@ -113,17 +113,14 @@ describe('Mergers', (): void => {
       const loaded = getLoaded()
       const previous = getPrevious()
 
-      expect(
-        configurableDeepMerge({
-        })(loaded, previous)
-      ).to.eql({
+      expect(configurableDeepMerge({})(loaded, previous)).to.eql({
         foo: 'loaded',
         bar: 'previous',
         array: [0, 1, 2, 7],
         object: {
           foo: 'loaded',
-          bar: 'previous'
-        }
+          bar: 'previous',
+        },
       })
     })
   })

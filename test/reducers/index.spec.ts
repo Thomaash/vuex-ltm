@@ -2,19 +2,21 @@ import { expect } from 'chai'
 
 import { pickModules, saveAll } from '@/reducers'
 
-describe('Reducers', function (): void {
-  describe('saveAll', function (): void {
-    it('Reference', function (): void {
+describe('Reducers', function(): void {
+  describe('saveAll', function(): void {
+    it('Reference', function(): void {
       const state = {}
-      expect(saveAll(state))
-        .to.equal(state, 'The value should be simply passed through')
+      expect(saveAll(state)).to.equal(
+        state,
+        'The value should be simply passed through'
+      )
     })
 
-    it('Properties', function (): void {
+    it('Properties', function(): void {
       const state = {
         foo: 'A',
         arr: ['B'],
-        obj: { val: 'C' }
+        obj: { val: 'C' },
       }
 
       const reduced = saveAll(state)
@@ -24,23 +26,27 @@ describe('Reducers', function (): void {
     })
   })
 
-  describe('pickModules', function (): void {
-    it('Reference', function (): void {
+  describe('pickModules', function(): void {
+    it('Reference', function(): void {
       const state = {}
-      expect(pickModules([])(state))
-        .to.not.equal(state, 'The original value should not be modified or returned')
+      expect(pickModules([])(state)).to.not.equal(
+        state,
+        'The original value should not be modified or returned'
+      )
     })
 
-    it('Properties', function (): void {
+    it('Properties', function(): void {
       const state = {
         foo: 'A',
         arr: ['B'],
-        obj: { val: 'C' }
+        obj: { val: 'C' },
       }
 
       const a = pickModules([])(state)
-      expect(a, 'Everything should be dropped when no modules were defined')
-        .to.be.empty.and.an('object')
+      expect(
+        a,
+        'Everything should be dropped when no modules were defined'
+      ).to.be.empty.and.an('object')
 
       const b = pickModules(['foo', 'arr', 'obj'])(state)
       expect(b).to.have.all.keys(['foo', 'arr', 'obj'])
@@ -53,8 +59,10 @@ describe('Reducers', function (): void {
       expect(c).to.have.property('arr', state.arr)
 
       const d = pickModules(['non-existent'])(state)
-      expect(d, 'Everything should be dropped when only non existent modules were defined')
-        .to.be.empty.and.an('object')
+      expect(
+        d,
+        'Everything should be dropped when only non existent modules were defined'
+      ).to.be.empty.and.an('object')
     })
   })
 })

@@ -1,4 +1,8 @@
-import { GenericStorageWrapper, ToInner, ToOuter } from './GenericStorageWrapper'
+import {
+  GenericStorageWrapper,
+  ToInner,
+  ToOuter,
+} from './GenericStorageWrapper'
 
 export interface LocalForage<T> {
   getItem(key: string): Promise<T>
@@ -18,18 +22,19 @@ export interface LocalForage<T> {
  *
  * @public
  */
-export function localForageWrapper<Outer, Inner = Outer> (
+export function localForageWrapper<Outer, Inner = Outer>(
   key: string,
   storage: LocalForage<Inner>,
-  toInner: ToInner<Outer, Inner> = (data): Inner => data as unknown as Inner,
-  toOuter: ToOuter<Outer, Inner> = (data): Outer | null => data as unknown as Outer | null
+  toInner: ToInner<Outer, Inner> = (data): Inner => (data as unknown) as Inner,
+  toOuter: ToOuter<Outer, Inner> = (data): Outer | null =>
+    (data as unknown) as Outer | null
 ): GenericStorageWrapper<Outer, Inner> {
   return new GenericStorageWrapper(
     key,
-    function setItem (key, data): Promise<void> {
+    function setItem(key, data): Promise<void> {
       return storage.setItem(key, data)
     },
-    function getItem (key): Promise<Inner | null> {
+    function getItem(key): Promise<Inner | null> {
       return storage.getItem(key)
     },
     toInner,

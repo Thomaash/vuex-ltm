@@ -12,7 +12,9 @@ export type Executor = (func: Function) => void
  *
  * @public
  */
-export const simplyExecute: Executor = (f): void => { f() }
+export const simplyExecute: Executor = (f): void => {
+  f()
+}
 
 /**
  * Configures an [[Executor]] that delays state persisting some time after the last change.
@@ -22,15 +24,15 @@ export const simplyExecute: Executor = (f): void => { f() }
  *
  * @public
  */
-export function executeWithDelay (ms: number): Executor {
+export function executeWithDelay(ms: number): Executor {
   let timeout: number | null = null
 
-  function onBeforeunload (e: BeforeUnloadEvent): void {
+  function onBeforeunload(e: BeforeUnloadEvent): void {
     e.preventDefault() // Cancel the event
     e.returnValue = '' // Chrome requires returnValue to be set
   }
 
-  return function (func): void {
+  return function(func): void {
     if (timeout == null) {
       // Starting a new timeout
       window.addEventListener('beforeunload', onBeforeunload)

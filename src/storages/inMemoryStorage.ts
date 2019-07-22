@@ -10,26 +10,24 @@ import { GenericStorageWrapper } from './GenericStorageWrapper'
  *
  * @public
  */
-export function inMemoryStorage<Outer> (
+export function inMemoryStorage<Outer>(
   key: string
 ): GenericStorageWrapper<Outer> {
   const map = new Map<string, Outer>()
 
   return new GenericStorageWrapper(
     key,
-    function setItem (key, data): void {
+    function setItem(key, data): void {
       map.set(key, data)
     },
-    function getItem (key): Outer | null {
+    function getItem(key): Outer | null {
       const v = map.get(key)
-      return v === undefined
-        ? null
-        : v
+      return v === undefined ? null : v
     },
-    function toInner (outer): Outer {
+    function toInner(outer): Outer {
       return outer
     },
-    function toOuter (inner): Outer | null {
+    function toOuter(inner): Outer | null {
       return inner
     }
   )

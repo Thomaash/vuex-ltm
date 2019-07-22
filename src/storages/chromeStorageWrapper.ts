@@ -1,6 +1,12 @@
-import { GenericStorageWrapper, ToInner, ToOuter } from './GenericStorageWrapper'
+import {
+  GenericStorageWrapper,
+  ToInner,
+  ToOuter,
+} from './GenericStorageWrapper'
 
-interface StorageItems<T> { [key: string]: T }
+interface StorageItems<T> {
+  [key: string]: T
+}
 interface ChromeStorage<T> {
   get(key: string[], callback: (result: StorageItems<T>) => void): void
   set(data: StorageItems<T>, callback: () => void): void
@@ -19,20 +25,21 @@ interface ChromeStorage<T> {
  *
  * @public
  */
-export function chromeStorageWrapper<Outer, Inner = Outer> (
+export function chromeStorageWrapper<Outer, Inner = Outer>(
   key: string,
   storage: ChromeStorage<Inner>,
-  toInner: ToInner<Outer, Inner> = (data): Inner => data as unknown as Inner,
-  toOuter: ToOuter<Outer, Inner> = (data): Outer | null => data as unknown as Outer | null
+  toInner: ToInner<Outer, Inner> = (data): Inner => (data as unknown) as Inner,
+  toOuter: ToOuter<Outer, Inner> = (data): Outer | null =>
+    (data as unknown) as Outer | null
 ): GenericStorageWrapper<Outer, Inner> {
   return new GenericStorageWrapper(
     key,
-    function setItem (key, data): Promise<void> {
+    function setItem(key, data): Promise<void> {
       return new Promise((resolve): void => {
         storage.set({ [key]: data }, resolve)
       })
     },
-    function getItem (key): Promise<Inner | null> {
+    function getItem(key): Promise<Inner | null> {
       return new Promise((resolve): void => {
         storage.get([key], (result): void => {
           resolve(result[key])

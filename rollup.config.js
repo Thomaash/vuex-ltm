@@ -13,54 +13,58 @@ const extensions = ['.js', '.jsx', '.ts', '.tsx']
 const esnextPlugins = [
   typescript({
     typescript: tsc,
-    cacheRoot: `${tempDir}/.rpt2_cache`
+    cacheRoot: `${tempDir}/.rpt2_cache`,
   }),
   commonjs(),
   resolve({
-    extensions
-  })
+    extensions,
+  }),
 ]
 const es5Plugins = [
   ...esnextPlugins,
   babel({
     extensions,
     include: ['src/**/*'],
-    runtimeHelpers: true
-  })
+    runtimeHelpers: true,
+  }),
 ]
-const es5MinPlugins = [
-  ...es5Plugins,
-  terser()
-]
+const es5MinPlugins = [...es5Plugins, terser()]
 
-export default [{
-  input,
-  output: [{
-    file: pkg.main,
-    format: 'es'
-  }, {
-    file: `dist/esnext/cjs.js`,
-    format: 'cjs'
-  }],
-  plugins: esnextPlugins,
-  external: [
-    ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.peerDependencies || {})
-  ]
-}, {
-  input,
-  output: ['amd', 'cjs', 'iife', 'umd'].map(format => ({
-    file: `dist/es5/${format}.js`,
-    format,
-    name: 'ltm'
-  })),
-  plugins: es5Plugins
-}, {
-  input,
-  output: ['amd', 'cjs', 'iife', 'umd'].map(format => ({
-    file: `dist/es5/${format}.min.js`,
-    format,
-    name: 'ltm'
-  })),
-  plugins: es5MinPlugins
-}]
+export default [
+  {
+    input,
+    output: [
+      {
+        file: pkg.main,
+        format: 'es',
+      },
+      {
+        file: `dist/esnext/cjs.js`,
+        format: 'cjs',
+      },
+    ],
+    plugins: esnextPlugins,
+    external: [
+      ...Object.keys(pkg.dependencies || {}),
+      ...Object.keys(pkg.peerDependencies || {}),
+    ],
+  },
+  {
+    input,
+    output: ['amd', 'cjs', 'iife', 'umd'].map(format => ({
+      file: `dist/es5/${format}.js`,
+      format,
+      name: 'ltm',
+    })),
+    plugins: es5Plugins,
+  },
+  {
+    input,
+    output: ['amd', 'cjs', 'iife', 'umd'].map(format => ({
+      file: `dist/es5/${format}.min.js`,
+      format,
+      name: 'ltm',
+    })),
+    plugins: es5MinPlugins,
+  },
+]

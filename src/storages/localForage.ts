@@ -1,11 +1,15 @@
-import { GenericStorageWrapper, ToInner, ToOuter } from './GenericStorageWrapper'
+import {
+  GenericStorageWrapper,
+  ToInner,
+  ToOuter,
+} from './GenericStorageWrapper'
 import { LocalForage, localForageWrapper } from './localForageWrapper'
 import lf from 'localforage'
 
 export const localForageDrivers = {
   INDEXEDDB: lf.INDEXEDDB,
   LOCALSTORAGE: lf.LOCALSTORAGE,
-  WEBSQL: lf.WEBSQL
+  WEBSQL: lf.WEBSQL,
 }
 
 /**
@@ -21,7 +25,7 @@ export const localForageDrivers = {
  *
  * @public
  */
-export function localForage<Outer, Inner = Outer> (
+export function localForage<Outer, Inner = Outer>(
   key: string,
   options: Parameters<typeof lf.createInstance>[0] = {},
   toInner?: ToInner<Outer, Inner>,

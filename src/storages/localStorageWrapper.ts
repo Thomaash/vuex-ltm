@@ -1,4 +1,8 @@
-import { GenericStorageWrapper, ToInner, ToOuter } from './GenericStorageWrapper'
+import {
+  GenericStorageWrapper,
+  ToInner,
+  ToOuter,
+} from './GenericStorageWrapper'
 
 /**
  * Required subset of localStorage API by [[localStorageWrapper]].
@@ -22,7 +26,7 @@ export interface StringStorage {
  *
  * @public
  */
-export function localStorageWrapper<Outer> (
+export function localStorageWrapper<Outer>(
   key: string,
   storage: StringStorage,
   toInner: ToInner<Outer, string> = JSON.stringify.bind(JSON),
@@ -30,10 +34,10 @@ export function localStorageWrapper<Outer> (
 ): GenericStorageWrapper<Outer, string> {
   return new GenericStorageWrapper(
     key,
-    function setItem (key, data): void {
+    function setItem(key, data): void {
       storage.setItem(key, data)
     },
-    function getItem (key): string | null {
+    function getItem(key): string | null {
       return storage.getItem(key)
     },
     toInner,

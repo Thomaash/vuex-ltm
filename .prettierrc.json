@@ -1,0 +1,7 @@
+{
+  "parser": "typescript",
+  "quoteProps": "consistent",
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5"
+}

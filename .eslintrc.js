@@ -1,30 +1,21 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    browser: true,
+    es6: true,
+    mocha: true,
+    node: true,
   },
   extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    '@vue/typescript',
-    '@vue/standard'
+    'prettier',
+    'prettier/@typescript-eslint',
   ],
-  plugins: [
-    '@typescript-eslint',
-    'mocha'
-  ],
+  plugins: ['@typescript-eslint', 'prettier', 'mocha'],
   rules: {
-    // standard-like ts
-    '@typescript-eslint/indent': ['error', 2],
-    '@typescript-eslint/member-delimiter-style': ['error', {
-      'multiline': {
-        'delimiter': 'none',
-        'requireLast': true
-      },
-      'singleline': {
-        'delimiter': 'semi',
-        'requireLast': false
-      }
-    }],
+    'prettier/prettier': 'error',
 
     // delete in the future?
     '@typescript-eslint/no-explicit-any': 'off',
@@ -34,34 +25,24 @@ module.exports = {
 
     // default
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
-  overrides: [{
-    files: ['*.ts'],
-    rules: {
-      // Reports type overloading
-      'import/export': 'off'
-    }
-  }, {
-    // Tests
-    files: ['test/**/*'],
-    env: {
-      node: true,
-      mocha: true
+  overrides: [
+    {
+      // Config files in the root of the project
+      files: ['!*/**'],
+      env: {
+        node: true,
+      },
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+      },
     },
-    rules: {
-      // Chai uses expressions like expect(…).to.be.true
-      'no-unused-expressions': 'off'
-    }
-  }, {
-    // Config files in the root of the project
-    files: ['!*/**'],
-    env: {
-      node: true
-    },
-    rules: {
-      '@typescript-eslint/no-var-requires': 'off'
-    }
-  }],
-  parser: '@typescript-eslint/parser'
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 2019,
+    project: './tsconfig.json',
+  },
 }

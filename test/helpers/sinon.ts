@@ -5,9 +5,9 @@ import sinonChai from 'sinon-chai'
 chai.use(sinonChai)
 export const expect = chai.expect
 
-beforeEach(function (): void {
+beforeEach(function(): void {
   this.sinon = sinon.createSandbox()
 })
-afterEach(function (): void {
+afterEach(function(): void {
   this.sinon.restore()
 })

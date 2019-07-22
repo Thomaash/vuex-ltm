@@ -42,7 +42,13 @@ export class LTM<S> {
    * @param reduce - [[Reducer]] that picks which parts of the state will be persisted.
    * @param storage - [[AsyncStorage]] that saves state data to the store.
    */
-  public constructor ({ execute, filter, merge, reduce, storage }: LTMConfig<S>) {
+  public constructor({
+    execute,
+    filter,
+    merge,
+    reduce,
+    storage,
+  }: LTMConfig<S>) {
     this.execute = execute
     this.filter = filter
     this.merge = merge
@@ -55,8 +61,8 @@ export class LTM<S> {
     })
   }
 
-  private async save (mutation: MutationPayload, state: S): Promise<void> {
-    if (!await this.filter(mutation)) {
+  private async save(mutation: MutationPayload, state: S): Promise<void> {
+    if (!(await this.filter(mutation))) {
       return
     }
 
@@ -71,7 +77,7 @@ export class LTM<S> {
     })
   }
 
-  private async load (store: Store<S>): Promise<void> {
+  private async load(store: Store<S>): Promise<void> {
     const loaded = await this.storage.load()
 
     if (!loaded) {
@@ -88,7 +94,7 @@ export class LTM<S> {
   /**
    * Vuex plugin (i.e. new Vuex.Store({ plugins: [ltm.plugin]})).
    */
-  public get plugin (): Plugin<S> {
+  public get plugin(): Plugin<S> {
     return (store: Store<S>): void => {
       store.subscribe((mutation, state): void => {
         this.save(mutation, state)

@@ -1,4 +1,8 @@
-import { GenericStorageWrapper, ToInner, ToOuter } from './GenericStorageWrapper'
+import {
+  GenericStorageWrapper,
+  ToInner,
+  ToOuter,
+} from './GenericStorageWrapper'
 import { localStorageWrapper } from './localStorageWrapper'
 
 /**
@@ -12,15 +16,10 @@ import { localStorageWrapper } from './localStorageWrapper'
  *
  * @public
  */
-export function localStorage<Outer> (
+export function localStorage<Outer>(
   key: string,
   toInner?: ToInner<Outer, string>,
   toOuter?: ToOuter<Outer, string>
 ): GenericStorageWrapper<Outer, string> {
-  return localStorageWrapper(
-    key,
-    window.localStorage,
-    toInner,
-    toOuter
-  )
+  return localStorageWrapper(key, window.localStorage, toInner, toOuter)
 }

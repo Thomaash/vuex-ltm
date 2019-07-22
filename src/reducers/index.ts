@@ -13,7 +13,7 @@ export type Reducer<S> = (state: S) => Partial<S>
  *
  * @public
  */
-export function saveAll<S> (state: S): S {
+export function saveAll<S>(state: S): S {
   return state
 }
 
@@ -24,12 +24,12 @@ export function saveAll<S> (state: S): S {
  *
  * @public
  */
-export function pickModules<S> (moduleNames: string[]): Reducer<S> {
-  return function (state: S): Partial<S> {
+export function pickModules<S>(moduleNames: string[]): Reducer<S> {
+  return function(state: S): Partial<S> {
     const reduced: Partial<S> = {}
     moduleNames.forEach((name): void => {
       if (Object.prototype.hasOwnProperty.call(state, name)) {
-        (reduced as any)[name] = (state as any)[name]
+        ;(reduced as any)[name] = (state as any)[name]
       }
     })
     return reduced

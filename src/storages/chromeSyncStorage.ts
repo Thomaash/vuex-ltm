@@ -1,6 +1,10 @@
 /* global chrome: false */
 
-import { GenericStorageWrapper, ToInner, ToOuter } from './GenericStorageWrapper'
+import {
+  GenericStorageWrapper,
+  ToInner,
+  ToOuter,
+} from './GenericStorageWrapper'
 import { chromeStorageWrapper } from './chromeStorageWrapper'
 
 /**
@@ -15,15 +19,10 @@ import { chromeStorageWrapper } from './chromeStorageWrapper'
  *
  * @public
  */
-export function chromeSyncStorage<Outer, Inner = Outer> (
+export function chromeSyncStorage<Outer, Inner = Outer>(
   key: string,
   toInner?: ToInner<Outer, Inner>,
   toOuter?: ToOuter<Outer, Inner>
 ): GenericStorageWrapper<Outer, Inner> {
-  return chromeStorageWrapper(
-    key,
-    chrome.storage.sync,
-    toInner,
-    toOuter
-  )
+  return chromeStorageWrapper(key, chrome.storage.sync, toInner, toOuter)
 }
