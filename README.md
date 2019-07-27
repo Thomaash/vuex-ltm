@@ -1,5 +1,7 @@
 # Vuex - Long Term Memory
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Thomaash/vuex-ltm.svg)](https://greenkeeper.io/)
+
 Async modular persistence for Vuex store.
 
 Documentation: https://thomaash.github.io/vuex-ltm/
