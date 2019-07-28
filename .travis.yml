@@ -3,3 +3,10 @@ language: node_js
 os: linux
 
 node_js: "node"
+
+before_deploy: npm run build
+deploy:
+  provider: npm
+  email: "tom.vycital@gmail.com"
+  api_key: "b3af43ab-c69a-4345-9931-f7cf4a30d8dd"
+  tag: next
