@@ -2,7 +2,10 @@
   "name": "vuex-ltm",
   "version": "1.0.3",
   "description": "Vuex - Long Term Memory: Async modular persistence for Vuex store.",
-  "keywords": ["Vuex", "persistence"],
+  "keywords": [
+    "Vuex",
+    "persistence"
+  ],
   "author": {
     "name": "Tomáš Vyčítal",
     "email": "tom.vycital@gmail.com",
@@ -17,7 +20,10 @@
   },
   "main": "dist/esnext/esm.js",
   "types": "dist/types",
-  "files": ["dist/**/*", "LICENSE*"],
+  "files": [
+    "dist/**/*",
+    "LICENSE*"
+  ],
   "scripts": {
     "build": "npm run build:code && npm run build:types && npm run build:docs",
     "build:code": "rollup --config rollup.config.js",
@@ -54,7 +60,9 @@
     ]
   },
   "mocha": {
-    "extension": ["ts"],
+    "extension": [
+      "ts"
+    ],
     "timeout": 10000,
     "recursive": true,
     "require": [
@@ -69,10 +77,21 @@
     "cache": false,
     "check-coverage": true,
     "per-file": true,
-    "include": ["src/**/*"],
-    "extension": [".ts"],
-    "exclude": ["**/*.d.ts", "**/*.spec.ts"],
-    "reporter": ["html", "text", "text-summary"]
+    "include": [
+      "src/**/*"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "**/*.spec.ts"
+    ],
+    "reporter": [
+      "html",
+      "text",
+      "text-summary"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -109,7 +128,7 @@
     "rollup-plugin-commonjs": "^10.0.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.1.1",
-    "rollup-plugin-typescript2": "^0.22.0",
+    "rollup-plugin-typescript2": "^0.22.1",
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0",
     "sinon-chrome": "^3.0.1",
