@@ -1,0 +1,111 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2.1
+
+executors:
+  node:
+    docker:
+      - image: circleci/node:12.7
+    working_directory: ~/repo
+
+jobs:
+  prepare:
+    executor: node
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: npm ci
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+          # taken to be the root directory of the workspace.
+          root: .
+          # Must be relative path from root
+          paths:
+            - '*'
+
+  lint:
+    executor: node
+
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run: npm run lint
+
+  test:
+    executor: node
+
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run: npm test
+
+  publish_next:
+    executor: node
+
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: Prepare NPM
+          command: |
+            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+
+      - run:
+          name: Prepare Git
+          command: |
+            git config user.email "tom.vycital@gmail.com"
+            git config user.name "Tomáš Vyčítal"
+
+      - run:
+          name: Set a new version
+          command: |
+            npm version $(node -p 'require("./package.json").version')-next.$(git rev-list --count master).$(git rev-parse HEAD)
+
+      - run:
+          name: Publish to NPM
+          command: |
+            npm publish --tag next
+
+workflows:
+  version: 2
+
+  build:
+    jobs:
+      - prepare
+
+      - lint:
+          requires:
+            - prepare
+
+      - test:
+          requires:
+            - prepare
+
+      - publish_next:
+          requires:
+            - prepare
+          filters:
+            branches:
+              only: master
+            tags:
+              ignore: /v[0-9]+(\.[0-9]+)*/
