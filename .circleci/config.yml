@@ -78,6 +78,12 @@ jobs:
       - attach_workspace:
           at: .
 
+      - run:
+          name: Prepare Git
+          command: |
+            git config user.email "tom.vycital@gmail.com"
+            git config user.name "Tomáš Vyčítal"
+
       - run: npm run gh-pages
 
   release:
