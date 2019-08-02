@@ -32,7 +32,7 @@
     "check": "es-check es5 dist/es5/*.js",
     "clean": "rimraf '{coverage,dist,docs}/*'",
     "fix": "npm run lint -- --fix",
-    "gh-pages": "gh-pages -d docs -m 'docs: update' -t -r 'https://github.com/Thomaash/vuex-ltm'",
+    "gh-pages": "gh-pages -d docs -m 'docs: update' -t -r 'git@github.com:Thomaash/vuex-ltm.git'",
     "lint": "eslint --ext .js,.ts src test *.js",
     "prepublishOnly": "npm run clean && npm run build",
     "test": "TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha",
