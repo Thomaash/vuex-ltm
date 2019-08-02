@@ -1,6 +1,6 @@
 # Vuex - Long Term Memory
 
-[![Build Status](https://travis-ci.com/Thomaash/vuex-ltm.svg?branch=master)](https://travis-ci.com/Thomaash/vuex-ltm)
+[![CircleCI](https://circleci.com/gh/Thomaash/vuex-ltm.svg?style=svg)](https://circleci.com/gh/Thomaash/vuex-ltm)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Thomaash/vuex-ltm.svg)](https://greenkeeper.io/)
 
 Async modular persistence for Vuex store.
