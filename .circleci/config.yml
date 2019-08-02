@@ -45,6 +45,14 @@ jobs:
 
       - run: npm run build
 
+      - run: npm run check
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - 'dist'
+            - 'docs'
+
   lint:
     executor: node
 

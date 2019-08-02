@@ -31,10 +31,9 @@
     "build:types": "tsc --project tsconfig.types.json",
     "check": "es-check es5 dist/es5/*.js",
     "clean": "rimraf '{coverage,dist,docs}/*'",
-    "clean-build": "npm run clean && npm run lint && npm run test && npm run build && npm run check",
     "fix": "npm run lint -- --fix",
     "lint": "eslint --ext .js,.ts src test *.js",
-    "prepublishOnly": "npm run clean-build",
+    "prepublishOnly": "npm run clean && npm run build",
     "test": "TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha",
     "test-watch": "TS_NODE_PROJECT='./tsconfig.test.json' mocha --watch"
   },
