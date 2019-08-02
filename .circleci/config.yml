@@ -71,6 +71,15 @@ jobs:
 
       - run: npm run test
 
+  gh_pages:
+    executor: node
+
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run: npm run test
+
   release:
     executor: node
 
@@ -111,9 +120,24 @@ workflows:
           requires:
             - prepare
 
+      - gh_pages:
+          requires:
+            - prepare
+            - build
+            - lint
+            - test
+          filters:
+            branches:
+              only:
+                - master
+
       - release:
           requires:
             - prepare
             - build
             - lint
             - test
+          filters:
+            branches:
+              only:
+                - master
