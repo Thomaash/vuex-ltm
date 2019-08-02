@@ -61,7 +61,7 @@ jobs:
       - attach_workspace:
           at: .
 
-      - run: npm run test:unit
+      - run: npm run test
 
   release:
     executor: node
