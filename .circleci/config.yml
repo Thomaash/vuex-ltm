@@ -31,14 +31,19 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
       - persist_to_workspace:
-          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
-          # taken to be the root directory of the workspace.
           root: .
-          # Must be relative path from root
           paths:
             - '*'
+
+  build:
+    executor: node
+
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run: npm run build
 
   lint:
     executor: node
@@ -56,9 +61,9 @@ jobs:
       - attach_workspace:
           at: .
 
-      - run: npm test
+      - run: npm run test:unit
 
-  publish_next:
+  release:
     executor: node
 
     steps:
@@ -69,22 +74,19 @@ jobs:
           name: Prepare NPM
           command: |
             npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-
       - run:
           name: Prepare Git
           command: |
             git config user.email "tom.vycital@gmail.com"
             git config user.name "Tomáš Vyčítal"
-
       - run:
-          name: Set a new version
+          name: Build
           command: |
-            npm version $(node -p 'require("./package.json").version')-next.$(git rev-list --count master).$(git rev-parse HEAD)
-
+            npm run build
       - run:
-          name: Publish to NPM
+          name: Release
           command: |
-            npm publish --tag next
+            npx semantic-release
 
 workflows:
   version: 2
@@ -92,6 +94,10 @@ workflows:
   build:
     jobs:
       - prepare
+
+      - build:
+          requires:
+            - prepare
 
       - lint:
           requires:
@@ -101,11 +107,9 @@ workflows:
           requires:
             - prepare
 
-      - publish_next:
+      - release:
           requires:
             - prepare
-          filters:
-            branches:
-              only: master
-            tags:
-              ignore: /v[0-9]+(\.[0-9]+)*/
+            - build
+            - lint
+            - test

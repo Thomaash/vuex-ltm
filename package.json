@@ -38,6 +38,16 @@
     "test": "TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha",
     "test-watch": "TS_NODE_PROJECT='./tsconfig.test.json' mocha --watch"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "publishConfig": {
+    "tag": "test"
+  },
   "babel": {
     "presets": [
       [
@@ -101,6 +111,9 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-typescript": "^7.3.3",
     "@babel/runtime": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@qiwi/semantic-release-gh-pages-plugin": "^1.10.5",
     "@types/chai": "^4.1.7",
     "@types/chrome": "0.0.86",
     "@types/mocha": "^5.2.7",
@@ -116,8 +129,10 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-mocha": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.2",
     "jsdom": "^15.1.1",
     "jsdom-global": "^3.0.2",
+    "lint-staged": "^9.2.1",
     "mocha": "^6.2.0",
     "mock-local-storage": "^1.1.8",
     "nyc": "^14.1.1",
