@@ -78,7 +78,7 @@ jobs:
       - attach_workspace:
           at: .
 
-      - run: npm run test
+      - run: npm run gh-pages
 
   release:
     executor: node
