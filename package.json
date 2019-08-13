@@ -120,7 +120,7 @@
     "@types/sinon-chai": "^3.2.2",
     "@types/sinon-chrome": "^2.2.6",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
+    "@typescript-eslint/parser": "^2.0.0",
     "chai": "^4.2.0",
     "es-check": "^5.0.0",
     "eslint": "^6.1.0",
