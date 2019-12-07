@@ -20,6 +20,9 @@ module.exports = {
     // delete in the future?
     '@typescript-eslint/no-explicit-any': 'off',
 
+    // I really don't understand the merit of this
+    '@typescript-eslint/no-empty-function': 'off',
+
     // custom
     'array-bracket-spacing': ['error', 'never'],
 
@@ -43,6 +46,6 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2019,
-    project: './tsconfig.json',
+    project: './tsconfig.lint.json',
   },
 }
