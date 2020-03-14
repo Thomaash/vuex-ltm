@@ -2383,7 +2383,7 @@ img {
 		<li class=" tsd-kind-interface tsd-has-type-parameter">
 			<a href="../interfaces/asyncstorage.html" class="tsd-kind-icon">Async<wbr>Storage</a>
 		</li>
-		<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-not-exported">
+		<li class=" tsd-kind-interface tsd-has-type-parameter">
 			<a href="../interfaces/chromestorage.html" class="tsd-kind-icon">Chrome<wbr>Storage</a>
 		</li>
 		<li class=" tsd-kind-interface tsd-has-type-parameter">
@@ -2392,7 +2392,7 @@ img {
 		<li class=" tsd-kind-interface tsd-has-type-parameter">
 			<a href="../interfaces/localforage.html" class="tsd-kind-icon">Local<wbr>Forage</a>
 		</li>
-		<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-not-exported">
+		<li class=" tsd-kind-interface tsd-has-type-parameter">
 			<a href="../interfaces/storageitems.html" class="tsd-kind-icon">Storage<wbr>Items</a>
 		</li>
 		<li class=" tsd-kind-interface">
@@ -2545,13 +2545,13 @@ img {
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new LTM<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ltm.html" class="tsd-signature-type">LTM</a></li>
+					<li class="tsd-signature tsd-kind-icon">new LTM<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>execute<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">; </span>filter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>mutation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MutationPayload</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>merge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>loaded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span>, previous<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">; </span>reduce<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>storage<span class="tsd-signature-symbol">: </span><a href="../interfaces/asyncstorage.html" class="tsd-signature-type">AsyncStorage</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ltm.html" class="tsd-signature-type">LTM</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/5d9e9cd/src/LTM.ts#L36">LTM.ts:36</a></li>
+								<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/84528b1/src/LTM.ts#L36">LTM.ts:36</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2559,16 +2559,16 @@ img {
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>__namedParameters: <span class="tsd-signature-type">object</span></h5>
+								<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>execute<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">; </span>filter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>mutation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MutationPayload</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>merge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>loaded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span>, previous<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">; </span>reduce<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>storage<span class="tsd-signature-symbol">: </span><a href="../interfaces/asyncstorage.html" class="tsd-signature-type">AsyncStorage</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h5>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter">
-										<h5>execute<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></h5>
+										<h5>execute<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 										<div class="tsd-comment tsd-typography">
 											<p><a href="../globals.html#executor">Executor</a> that controls when and if the state will be persisted (e.g. to prevent bursts).</p>
 										</div>
 										<ul class="tsd-parameters">
 											<li class="tsd-parameter-siganture">
-												<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
+												<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
 													<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 												</ul>
 												<ul class="tsd-descriptions">
@@ -2586,13 +2586,13 @@ img {
 										</ul>
 									</li>
 									<li class="tsd-parameter">
-										<h5>filter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></h5>
+										<h5>filter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>mutation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MutationPayload</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></h5>
 										<div class="tsd-comment tsd-typography">
 											<p><a href="../globals.html#filter">Filter</a> that decides whether a mutation will trigger persisting.</p>
 										</div>
 										<ul class="tsd-parameters">
 											<li class="tsd-parameter-siganture">
-												<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
+												<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
 													<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>mutation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MutationPayload</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 												</ul>
 												<ul class="tsd-descriptions">
@@ -2610,13 +2610,13 @@ img {
 										</ul>
 									</li>
 									<li class="tsd-parameter">
-										<h5>merge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></h5>
+										<h5>merge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>loaded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span>, previous<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">S</span></h5>
 										<div class="tsd-comment tsd-typography">
 											<p><a href="../globals.html#merger">Merger</a> that merges loaded state into Vuex.</p>
 										</div>
 										<ul class="tsd-parameters">
 											<li class="tsd-parameter-siganture">
-												<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
+												<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
 													<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>loaded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span>, previous<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">S</span></li>
 												</ul>
 												<ul class="tsd-descriptions">
@@ -2637,13 +2637,13 @@ img {
 										</ul>
 									</li>
 									<li class="tsd-parameter">
-										<h5>reduce<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></h5>
+										<h5>reduce<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span></h5>
 										<div class="tsd-comment tsd-typography">
 											<p><a href="../globals.html#reducer">Reducer</a> that picks which parts of the state will be persisted.</p>
 										</div>
 										<ul class="tsd-parameters">
 											<li class="tsd-parameter-siganture">
-												<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
+												<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
 													<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span></li>
 												</ul>
 												<ul class="tsd-descriptions">
@@ -2661,7 +2661,7 @@ img {
 										</ul>
 									</li>
 									<li class="tsd-parameter">
-										<h5>storage<span class="tsd-signature-symbol">: </span><a href="../interfaces/asyncstorage.html" class="tsd-signature-type">AsyncStorage</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h5>
+										<h5>storage<span class="tsd-signature-symbol">: </span><a href="../interfaces/asyncstorage.html" class="tsd-signature-type">AsyncStorage</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">&gt;</span></h5>
 										<div class="tsd-comment tsd-typography">
 											<p><a href="../interfaces/asyncstorage.html">AsyncStorage</a> that saves state data to the store.</p>
 										</div>
@@ -2682,7 +2682,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">ready<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/5d9e9cd/src/LTM.ts#L34">LTM.ts:34</a></li>
+						<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/84528b1/src/LTM.ts#L34">LTM.ts:34</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2704,7 +2704,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/5d9e9cd/src/LTM.ts#L97">LTM.ts:97</a></li>
+								<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/84528b1/src/LTM.ts#L97">LTM.ts:97</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
