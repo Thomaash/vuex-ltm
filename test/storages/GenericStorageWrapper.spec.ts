@@ -2,9 +2,9 @@ import { expect } from '#/helpers/sinon'
 
 import { GenericStorageWrapper } from '@/storages/GenericStorageWrapper'
 
-describe('Storages', function(): void {
-  describe('GenericStorageWrapper', function(): void {
-    it('Load state', async function(): Promise<void> {
+describe('Storages', function (): void {
+  describe('GenericStorageWrapper', function (): void {
+    it('Load state', async function (): Promise<void> {
       const setItem = this.sinon.stub().throwsArg(0)
       const getItem = this.sinon.stub().throwsArg(0)
       getItem.withArgs('TEST').returns('A-inner')
@@ -23,7 +23,7 @@ describe('Storages', function(): void {
       expect(await gsw.load()).to.equal('A-outer')
     })
 
-    it('Load empty state', async function(): Promise<void> {
+    it('Load empty state', async function (): Promise<void> {
       const setItem = this.sinon.stub().throwsArg(0)
       const getItem = this.sinon.stub().throwsArg(0)
       getItem.withArgs('TEST').returns(null)
@@ -41,7 +41,7 @@ describe('Storages', function(): void {
       expect(await gsw.load()).to.equal(null)
     })
 
-    it('Save state', async function(): Promise<void> {
+    it('Save state', async function (): Promise<void> {
       const setItem = this.sinon.stub().throwsArg(0)
       setItem.withArgs('TEST', 'A-inner').returns(undefined)
       const getItem = this.sinon.stub().throwsArg(0)

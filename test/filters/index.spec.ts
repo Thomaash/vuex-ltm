@@ -12,7 +12,7 @@ const payloads = {
 }
 
 describe('Filters', (): void => {
-  describe('dummyFilter', function(): void {
+  describe('dummyFilter', function (): void {
     it('Should return true for everything', (): void => {
       const f: Filter = dummyFilter
       expect(f(payloads.bar)).to.be.true
@@ -21,7 +21,7 @@ describe('Filters', (): void => {
     })
   })
 
-  describe('mutationFiler', function(): void {
+  describe('mutationFiler', function (): void {
     it('Should return false for everything with empty configuration', (): void => {
       const f: Filter = mutationFilter([])
       expect(f(payloads.bar)).to.be.false

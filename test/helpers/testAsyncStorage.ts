@@ -43,8 +43,8 @@ export function testAsyncStorage(
   getState: (key: string) => Data | null | Promise<Data | null>,
   delState: (key: string) => void | Promise<void>
 ): void {
-  describe('Standard async storage test', function(): void {
-    it('Load state (blank → A)', async function(): Promise<void> {
+  describe('Standard async storage test', function (): void {
+    it('Load state (blank → A)', async function (): Promise<void> {
       await setState(key, data.a())
 
       const ltm = new LTM<Data>({
@@ -70,7 +70,7 @@ export function testAsyncStorage(
       )
     })
 
-    it('Load state (A → B)', async function(): Promise<void> {
+    it('Load state (A → B)', async function (): Promise<void> {
       await setState(key, data.b())
 
       const ltm = new LTM<Data>({
@@ -96,7 +96,7 @@ export function testAsyncStorage(
       )
     })
 
-    it('Load state (A → null)', async function(): Promise<void> {
+    it('Load state (A → null)', async function (): Promise<void> {
       await delState(key)
 
       const ltm = new LTM<Data>({
@@ -122,7 +122,7 @@ export function testAsyncStorage(
       )
     })
 
-    it('Save state after mutation', async function(): Promise<void> {
+    it('Save state after mutation', async function (): Promise<void> {
       await delState(key)
 
       const ltm = new LTM<Data>({

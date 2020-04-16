@@ -4,7 +4,7 @@ import { executeWithDelay, simplyExecute } from '@/executors'
 
 describe('Executors', (): void => {
   describe('simplyExecute', (): void => {
-    it('All functions should be executed', function(): void {
+    it('All functions should be executed', function (): void {
       let v = 0
 
       simplyExecute((): void => {
@@ -28,7 +28,7 @@ describe('Executors', (): void => {
   })
 
   describe('executeWithDelay', (): void => {
-    it('Builder function should return a function', async function(): Promise<
+    it('Builder function should return a function', async function (): Promise<
       void
     > {
       const execute = executeWithDelay(0)
@@ -36,7 +36,9 @@ describe('Executors', (): void => {
       expect(execute).to.be.a('function')
     })
 
-    it('Only the last one should be executed', async function(): Promise<void> {
+    it('Only the last one should be executed', async function (): Promise<
+      void
+    > {
       const execute = executeWithDelay(0)
       let v = 0
 
@@ -63,7 +65,7 @@ describe('Executors', (): void => {
       expect(v).to.equal(0)
     })
 
-    it('Beforeunload event listeners should be set and unset', async function(): Promise<
+    it('Beforeunload event listeners should be set and unset', async function (): Promise<
       void
     > {
       const addSpy = this.sinon.spy(window, 'addEventListener')
@@ -88,9 +90,7 @@ describe('Executors', (): void => {
       // Add event listener call
       const addCall = addSpy.getCall(0)
       expect(addCall.args).to.have.property('0', 'beforeunload')
-      expect(addCall.args)
-        .to.have.property('1')
-        .that.is.a('function')
+      expect(addCall.args).to.have.property('1').that.is.a('function')
 
       const handler: Function = addCall.args[1]
 

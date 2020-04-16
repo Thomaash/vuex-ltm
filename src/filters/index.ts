@@ -35,7 +35,7 @@ export function mutationFilter(mutations: (string | RegExp)[]): Filter {
   const regexps = mutations.filter(
     (value): value is RegExp => value instanceof RegExp
   )
-  return function({ type }: MutationPayload): boolean {
+  return function ({ type }: MutationPayload): boolean {
     return (
       values.indexOf(type) >= 0 || regexps.some((re): boolean => re.test(type))
     )

@@ -2,9 +2,9 @@ import { expect } from 'chai'
 
 import { pickModules, saveAll } from '@/reducers'
 
-describe('Reducers', function(): void {
-  describe('saveAll', function(): void {
-    it('Reference', function(): void {
+describe('Reducers', function (): void {
+  describe('saveAll', function (): void {
+    it('Reference', function (): void {
       const state = {}
       expect(saveAll(state)).to.equal(
         state,
@@ -12,7 +12,7 @@ describe('Reducers', function(): void {
       )
     })
 
-    it('Properties', function(): void {
+    it('Properties', function (): void {
       const state = {
         foo: 'A',
         arr: ['B'],
@@ -26,8 +26,8 @@ describe('Reducers', function(): void {
     })
   })
 
-  describe('pickModules', function(): void {
-    it('Reference', function(): void {
+  describe('pickModules', function (): void {
+    it('Reference', function (): void {
       const state = {}
       expect(pickModules([])(state)).to.not.equal(
         state,
@@ -35,7 +35,7 @@ describe('Reducers', function(): void {
       )
     })
 
-    it('Properties', function(): void {
+    it('Properties', function (): void {
       const state = {
         foo: 'A',
         arr: ['B'],

@@ -10,8 +10,8 @@ import { localStorage } from '@/storages/localStorage'
 
 const storageFunctions = getTestAsyncStorageFunctions<Data>('localStorage')
 
-describe('Storages', function(): void {
-  describe('localStorage', function(): void {
+describe('Storages', function (): void {
+  describe('localStorage', function (): void {
     testAsyncStorage(
       (): Storage => localStorage<Data>(key),
       storageFunctions.setState,
