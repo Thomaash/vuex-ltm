@@ -6,9 +6,9 @@ interface Data {
   foo: 'A' | 'B'
 }
 
-describe('Storages', function(): void {
-  describe('inMemoryStorage', function(): void {
-    it('Load from empty', async function(): Promise<void> {
+describe('Storages', function (): void {
+  describe('inMemoryStorage', function (): void {
+    it('Load from empty', async function (): Promise<void> {
       const storage = inMemoryStorage('TEST')
 
       const loaded = await storage.load()
@@ -16,7 +16,7 @@ describe('Storages', function(): void {
       expect(loaded).to.be.null
     })
 
-    it('Save and load', async function(): Promise<void> {
+    it('Save and load', async function (): Promise<void> {
       const storage = inMemoryStorage<Data>('TEST')
 
       const original: Data = { foo: 'A' }
@@ -27,7 +27,7 @@ describe('Storages', function(): void {
       expect(loaded).to.have.property('foo', 'A')
     })
 
-    it('Overwrite', async function(): Promise<void> {
+    it('Overwrite', async function (): Promise<void> {
       const storage = inMemoryStorage<Data>('TEST')
 
       const originalA: Data = { foo: 'A' }

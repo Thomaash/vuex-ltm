@@ -51,7 +51,7 @@ export default [
   },
   {
     input,
-    output: ['amd', 'cjs', 'iife', 'umd'].map(format => ({
+    output: ['amd', 'cjs', 'iife', 'umd'].map((format) => ({
       file: `dist/es5/${format}.js`,
       format,
       name: 'ltm',
@@ -60,7 +60,7 @@ export default [
   },
   {
     input,
-    output: ['amd', 'cjs', 'iife', 'umd'].map(format => ({
+    output: ['amd', 'cjs', 'iife', 'umd'].map((format) => ({
       file: `dist/es5/${format}.min.js`,
       format,
       name: 'ltm',

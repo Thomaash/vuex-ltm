@@ -10,9 +10,9 @@ import { chromeSyncStorage } from '@/storages/chromeSyncStorage'
 
 const storageFunctions = getTestAsyncStorageFunctions<Data>('sync')
 
-describe('Storages', function(): void {
-  describe('chromeSyncStorage', function(): void {
-    beforeEach(function(): void {
+describe('Storages', function (): void {
+  describe('chromeSyncStorage', function (): void {
+    beforeEach(function (): void {
       storageFunctions.mockChromeStorage()
     })
 

@@ -32,7 +32,7 @@ export function executeWithDelay(ms: number): Executor {
     e.returnValue = '' // Chrome requires returnValue to be set
   }
 
-  return function(func): void {
+  return function (func): void {
     if (timeout == null) {
       // Starting a new timeout
       window.addEventListener('beforeunload', onBeforeunload)

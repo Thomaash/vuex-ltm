@@ -10,9 +10,9 @@ import { chromeLocalStorage } from '@/storages/chromeLocalStorage'
 
 const storageFunctions = getTestAsyncStorageFunctions<Data>('local')
 
-describe('Storages', function(): void {
-  describe('chromeLocalStorage', function(): void {
-    beforeEach(function(): void {
+describe('Storages', function (): void {
+  describe('chromeLocalStorage', function (): void {
+    beforeEach(function (): void {
       storageFunctions.mockChromeStorage()
     })
 
