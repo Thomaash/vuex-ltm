@@ -39,7 +39,7 @@ export function getTestAsyncStorageFunctions<Data>(
       ;(global as any).chrome = {
         storage: {
           [type]: {
-            set(items: Items<Data>, callback: Function): void {
+            set(items: Items<Data>, callback: () => void): void {
               Object.entries(items).forEach(([key, value]): void => {
                 map.set(key, value)
               })
@@ -57,7 +57,7 @@ export function getTestAsyncStorageFunctions<Data>(
 
               callback(result)
             },
-            remove(keys: string[], callback: Function): void {
+            remove(keys: string[], callback: () => void): void {
               keys.forEach((key): void => {
                 map.delete(key)
               })

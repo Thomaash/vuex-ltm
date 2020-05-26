@@ -5,7 +5,7 @@
  *
  * @public
  */
-export type Executor = (func: Function) => void
+export type Executor = (func: () => void) => void
 
 /**
  * Persists the state immediatelly.
@@ -32,7 +32,7 @@ export function executeWithDelay(ms: number): Executor {
     e.returnValue = '' // Chrome requires returnValue to be set
   }
 
-  return function (func): void {
+  return function executer(func: () => void): void {
     if (timeout == null) {
       // Starting a new timeout
       window.addEventListener('beforeunload', onBeforeunload)

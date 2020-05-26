@@ -6,14 +6,14 @@ export function getTestAsyncStorageFunctions<Data>(
   removeState(key: string): void
 } {
   return {
-    setState(key, state): void {
+    setState(key: string, state: Data): void {
       window[type].setItem(key, JSON.stringify(state))
     },
-    getState(key): Data | null {
+    getState(key: string): Data | null {
       const str = window[type].getItem(key)
       return str != null ? JSON.parse(str) : null
     },
-    removeState(key): void {
+    removeState(key: string): void {
       window[type].removeItem(key)
     },
   }

@@ -92,7 +92,7 @@ describe('Executors', (): void => {
       expect(addCall.args).to.have.property('0', 'beforeunload')
       expect(addCall.args).to.have.property('1').that.is.a('function')
 
-      const handler: Function = addCall.args[1]
+      const handler: (event: Event) => void = addCall.args[1]
 
       // Event event listener call
       const removeCall = removeSpy.getCall(0)
@@ -113,7 +113,7 @@ describe('Executors', (): void => {
         'Beforeunload hanler shoudn’t call preventDefault multiple times'
       )
 
-      handler(e)
+      handler((e as unknown) as Event)
 
       expect(e.returnValue).to.equal(
         '',
