@@ -1,7 +1,12 @@
 # Vuex - Long Term Memory
 
 [![CircleCI](https://circleci.com/gh/Thomaash/vuex-ltm.svg?style=svg)](https://circleci.com/gh/Thomaash/vuex-ltm)
-[![Greenkeeper badge](https://badges.greenkeeper.io/Thomaash/vuex-ltm.svg)](https://greenkeeper.io/)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Renovate](https://badges.renovateapi.com/github/Thomaash/vuex-ltm)](https://app.renovatebot.com/)
+[![npm](https://img.shields.io/npm/v/vuex-ltm)](https://www.npmjs.com/package/vuex-ltm)
+[![dependencies Status](https://david-dm.org/Thomaash/vuex-ltm/status.svg)](https://david-dm.org/Thomaash/vuex-ltm)
+[![devDependencies Status](https://david-dm.org/Thomaash/vuex-ltm/dev-status.svg)](https://david-dm.org/Thomaash/vuex-ltm?type=dev)
+[![peerDependencies Status](https://david-dm.org/Thomaash/vuex-ltm/peer-status.svg)](https://david-dm.org/Thomaash/vuex-ltm?type=peer)
 
 Async modular persistence for Vuex store.
 
