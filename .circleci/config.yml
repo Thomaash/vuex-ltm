@@ -138,7 +138,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - release
 
       - release:
           requires:
@@ -149,4 +149,4 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - release
