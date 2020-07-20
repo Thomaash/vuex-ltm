@@ -149,7 +149,7 @@
     "ts-node": "8.10.2",
     "tsconfig-paths": "3.9.0",
     "typedoc": "0.17.8",
-    "typescript": "3.9.3",
+    "typescript": "3.9.7",
     "vue": "2.6.11",
     "vuex": "3.4.0"
   },
