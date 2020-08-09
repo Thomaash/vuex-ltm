@@ -148,7 +148,7 @@
     "temp-dir": "2.0.0",
     "ts-node": "8.10.2",
     "tsconfig-paths": "3.9.0",
-    "typedoc": "0.17.8",
+    "typedoc": "0.18.0",
     "typescript": "3.9.7",
     "vue": "2.6.11",
     "vuex": "3.5.1"
