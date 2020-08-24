@@ -134,7 +134,7 @@
     "mocha": "8.1.1",
     "mock-local-storage": "1.1.15",
     "nyc": "15.1.0",
-    "prettier": "2.0.5",
+    "prettier": "2.1.0",
     "rimraf": "3.0.2",
     "rollup": "2.26.5",
     "rollup-plugin-babel": "4.4.0",
