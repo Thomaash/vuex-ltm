@@ -121,7 +121,7 @@
     "@typescript-eslint/parser": "4.6.0",
     "copyfiles": "2.4.0",
     "chai": "4.2.0",
-    "es-check": "5.1.1",
+    "es-check": "5.1.2",
     "eslint": "7.12.1",
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-mocha": "8.0.0",
