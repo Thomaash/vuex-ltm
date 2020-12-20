@@ -52,6 +52,7 @@ jobs:
           paths:
             - 'dist'
             - 'docs'
+            - 'releases'
 
   lint:
     executor: node
