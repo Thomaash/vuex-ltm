@@ -3,5 +3,10 @@ branches:
 plugins:
   - '@semantic-release/commit-analyzer'
   - '@semantic-release/release-notes-generator'
-  - '@semantic-release/npm'
+  - - "@semantic-release/npm"
+    - pkgRoot: .
+  - - "@semantic-release/npm"
+    - pkgRoot: releases/bundled
+  - - "@semantic-release/npm"
+    - pkgRoot: releases/esnext
   - '@semantic-release/github'

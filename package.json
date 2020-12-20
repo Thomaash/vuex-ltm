@@ -8,7 +8,7 @@
   ],
   "author": {
     "name": "Tomáš Vyčítal",
-    "email": "tom.vycital@gmail.com",
+    "email": "tomina@vycital.eu",
     "url": "https://github.com/Thomaash"
   },
   "license": "(Apache-2.0 OR ISC)",
@@ -16,7 +16,7 @@
   "bugs": "https://github.com/Thomaash/vuex-ltm/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Thomaash/vuex-ltm"
+    "url": "git@github.com:Thomaash/vuex-ltm.git"
   },
   "main": "dist/esnext/esm.js",
   "types": "dist/types",
@@ -25,17 +25,17 @@
     "LICENSE*"
   ],
   "scripts": {
-    "build": "npm run build:code && npm run build:types && npm run build:docs",
+    "build": "npm run build:types && npm run build:code && npm run build:docs",
     "build:code": "rollup --config rollup.config.js",
-    "build:docs": "typedoc --excludePrivate --excludeExternals --includeDeclarations --mode file --theme minimal --name 'Vuex - Long Term Memory' --out docs src && copyfiles --all --up 1 \"docs-misc/.circleci/config.yml\" \"docs\"",
+    "build:docs": "typedoc --excludePrivate --excludeExternals --includeDeclarations --mode file --theme minimal --name \"Vuex - Long Term Memory\" --out docs src && copyfiles --all --up 1 \"docs-misc/.circleci/config.yml\" \"docs\"",
     "build:types": "tsc --project tsconfig.types.json",
     "check": "es-check es5 dist/es5/*.js",
-    "clean": "rimraf '{coverage,dist,docs}/{*,.*}'",
+    "clean": "rimraf \"{coverage,dist,docs,releases}/{*,.*}\"",
     "fix": "npm run lint -- --fix",
     "lint": "eslint --ext .js,.ts src test *.js",
     "prepublishOnly": "npm run clean && npm run build",
-    "test": "TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha",
-    "test-watch": "TS_NODE_PROJECT='./tsconfig.test.json' mocha --watch"
+    "test": "cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" nyc mocha",
+    "test-watch": "cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --watch"
   },
   "husky": {
     "hooks": {
@@ -119,8 +119,9 @@
     "@types/sinon-chrome": "2.2.10",
     "@typescript-eslint/eslint-plugin": "4.10.0",
     "@typescript-eslint/parser": "4.10.0",
-    "copyfiles": "2.4.1",
     "chai": "4.2.0",
+    "copyfiles": "2.4.1",
+    "cross-env": "7.0.3",
     "es-check": "5.1.4",
     "eslint": "7.16.0",
     "eslint-config-prettier": "7.1.0",
@@ -139,6 +140,7 @@
     "rollup": "2.35.1",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-copy": "3.3.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-typescript2": "0.29.0",

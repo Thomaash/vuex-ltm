@@ -1,7 +1,7 @@
-node_modules
-/dist
-/docs
-/vuex-ltm-*.tgz
-
 /.nyc_output
 /coverage
+/dist
+/docs
+/releases/
+/vuex-ltm-*.tgz
+node_modules
