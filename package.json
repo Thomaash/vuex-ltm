@@ -16,7 +16,7 @@
   "bugs": "https://github.com/Thomaash/vuex-ltm/issues",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Thomaash/vuex-ltm.git"
+    "url": "https://github.com/Thomaash/vuex-ltm"
   },
   "main": "dist/esnext/esm.js",
   "types": "dist/types",
