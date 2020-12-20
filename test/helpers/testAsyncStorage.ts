@@ -144,7 +144,7 @@ export function testAsyncStorage(
 
       store.commit('setBar', data.b().bar)
 
-      await new Promise((resolve): void => void setTimeout(resolve, 0))
+      await new Promise<void>((resolve): void => void setTimeout(resolve, 0))
 
       expect(await getState(key)).to.eql(
         data.b(),

@@ -135,7 +135,7 @@
     "mocha": "8.2.1",
     "mock-local-storage": "1.1.15",
     "nyc": "15.1.0",
-    "prettier": "2.1.2",
+    "prettier": "2.2.1",
     "rimraf": "3.0.2",
     "rollup": "2.35.1",
     "rollup-plugin-babel": "4.4.0",
@@ -151,17 +151,17 @@
     "ts-node": "9.1.1",
     "tsconfig-paths": "3.9.0",
     "typedoc": "0.19.2",
-    "typescript": "4.0.5",
+    "typescript": "4.1.3",
     "vue": "2.6.12",
     "vuex": "3.6.0"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.9.6",
-    "deepmerge": "^4.2.2",
-    "localforage": "^1.7.3"
+    "@babel/runtime-corejs3": "^7.0.0",
+    "deepmerge": "^4.0.0",
+    "localforage": "^1.0.0"
   },
   "peerDependencies": {
-    "vue": "^2.6.11",
+    "vue": "^2.6.0",
     "vuex": "^3.4.0"
   }
 }

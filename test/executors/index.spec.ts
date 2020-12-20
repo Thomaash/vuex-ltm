@@ -28,17 +28,13 @@ describe('Executors', (): void => {
   })
 
   describe('executeWithDelay', (): void => {
-    it('Builder function should return a function', async function (): Promise<
-      void
-    > {
+    it('Builder function should return a function', async function (): Promise<void> {
       const execute = executeWithDelay(0)
 
       expect(execute).to.be.a('function')
     })
 
-    it('Only the last one should be executed', async function (): Promise<
-      void
-    > {
+    it('Only the last one should be executed', async function (): Promise<void> {
       const execute = executeWithDelay(0)
       let v = 0
 
@@ -58,16 +54,14 @@ describe('Executors', (): void => {
         v += 2 ** 4
       })
 
-      await new Promise((resolve): void => {
+      await new Promise<void>((resolve): void => {
         execute(resolve)
       })
 
       expect(v).to.equal(0)
     })
 
-    it('Beforeunload event listeners should be set and unset', async function (): Promise<
-      void
-    > {
+    it('Beforeunload event listeners should be set and unset', async function (): Promise<void> {
       const addSpy = this.sinon.spy(window, 'addEventListener')
       const removeSpy = this.sinon.spy(window, 'removeEventListener')
 
@@ -84,7 +78,7 @@ describe('Executors', (): void => {
       expectSpies(1, 0)
       execute((): void => {})
       expectSpies(1, 0)
-      await new Promise((resolve): void => execute(resolve))
+      await new Promise<void>((resolve): void => execute(resolve))
       expectSpies(1, 1)
 
       // Add event listener call
