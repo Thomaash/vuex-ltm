@@ -133,7 +133,7 @@
     "jsdom-global": "3.0.2",
     "lint-staged": "10.5.3",
     "mocha": "8.2.1",
-    "mock-local-storage": "1.1.15",
+    "mock-local-storage": "1.1.16",
     "nyc": "15.1.0",
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
