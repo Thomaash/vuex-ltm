@@ -2711,7 +2711,7 @@ img {
 <span style="color: #000000">  </span><span style="color: #001080">simplyExecute</span>
 <span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;vuex-ltm&quot;</span>
 
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ltm</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">LTM</span><span style="color: #000000">({</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ltm</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">LTM</span><span style="color: #000000">({</span>
 <span style="color: #000000">  </span><span style="color: #008000">// Persist immediatelly (even multiple times per second).</span>
 <span style="color: #000000">  </span><span style="color: #001080">execute:</span><span style="color: #000000"> </span><span style="color: #001080">simplyExecute</span><span style="color: #000000">,</span>
 <span style="color: #000000">  </span><span style="color: #008000">// Persist all mutations.</span>
@@ -2725,7 +2725,7 @@ img {
 <span style="color: #000000">})</span>
 
 <span style="color: #001080">Vue</span><span style="color: #000000">.</span><span style="color: #795E26">use</span><span style="color: #000000">(</span><span style="color: #001080">Vuex</span><span style="color: #000000">)</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">store</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Vuex</span><span style="color: #000000">.</span><span style="color: #267F99">Store</span><span style="color: #000000">({</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">store</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #001080">Vuex</span><span style="color: #000000">.</span><span style="color: #795E26">Store</span><span style="color: #000000">({</span>
 <span style="color: #000000">  </span><span style="color: #001080">state:</span><span style="color: #000000"> {},</span>
 <span style="color: #000000">  </span><span style="color: #001080">plugins:</span><span style="color: #000000"> [</span><span style="color: #001080">ltm</span><span style="color: #000000">.</span><span style="color: #001080">plugin</span><span style="color: #000000">]</span>
 <span style="color: #000000">})</span>
@@ -2745,7 +2745,7 @@ img {
 <span style="color: #000000">  </span><span style="color: #001080">pickModules</span>
 <span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;vuex-ltm&#039;</span>
 
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ltm</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">LTM</span><span style="color: #000000">({</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ltm</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">LTM</span><span style="color: #000000">({</span>
 <span style="color: #000000">  </span><span style="color: #008000">// Persist 2 seconds after the last change (prevents bursts).</span>
 <span style="color: #000000">  </span><span style="color: #001080">execute:</span><span style="color: #000000"> </span><span style="color: #795E26">executeWithDelay</span><span style="color: #000000">(</span><span style="color: #098658">2000</span><span style="color: #000000">),</span>
 <span style="color: #000000">  </span><span style="color: #008000">// Persist only after select mutations.</span>
@@ -2761,7 +2761,7 @@ img {
 <span style="color: #000000">})</span>
 
 <span style="color: #001080">Vue</span><span style="color: #000000">.</span><span style="color: #795E26">use</span><span style="color: #000000">(</span><span style="color: #001080">Vuex</span><span style="color: #000000">)</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">store</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Vuex</span><span style="color: #000000">.</span><span style="color: #267F99">Store</span><span style="color: #000000">({</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">store</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #001080">Vuex</span><span style="color: #000000">.</span><span style="color: #795E26">Store</span><span style="color: #000000">({</span>
 <span style="color: #000000">  </span><span style="color: #001080">state:</span><span style="color: #000000"> {},</span>
 <span style="color: #000000">  </span><span style="color: #001080">modules:</span><span style="color: #000000"> {</span>
 <span style="color: #000000">    </span><span style="color: #001080">local:</span><span style="color: #000000"> …,</span>
@@ -2774,7 +2774,7 @@ img {
 <span style="color: #008000">// Otherwise you&#039;ll have the defaults in Vuex before the persisted state is loaded.</span>
 <span style="color: #000000">;(</span><span style="color: #0000FF">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 <span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">ltm</span><span style="color: #000000">.</span><span style="color: #001080">ready</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Vue</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Vue</span><span style="color: #000000">({</span>
 <span style="color: #000000">    </span><span style="color: #001080">store</span><span style="color: #000000">,</span>
 <span style="color: #000000">    </span><span style="color: #795E26">render</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #001080">h</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #795E26">h</span><span style="color: #000000">(</span><span style="color: #001080">App</span><span style="color: #000000">)</span>
 <span style="color: #000000">  }).</span><span style="color: #795E26">$mount</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;#app&#039;</span><span style="color: #000000">)</span>
