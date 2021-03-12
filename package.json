@@ -119,7 +119,7 @@
     "@types/sinon-chrome": "2.2.10",
     "@typescript-eslint/eslint-plugin": "4.17.0",
     "@typescript-eslint/parser": "4.17.0",
-    "chai": "4.3.3",
+    "chai": "4.3.4",
     "copyfiles": "2.4.1",
     "cross-env": "7.0.3",
     "es-check": "5.2.3",
