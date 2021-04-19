@@ -156,7 +156,7 @@
     "vuex": "3.6.2"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.0.0",
+    "@babel/runtime-corejs3": "^7.9.6",
     "deepmerge": "^4.0.0",
     "localforage": "^1.0.0"
   },
