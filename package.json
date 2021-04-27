@@ -113,7 +113,7 @@
     "@types/chai": "4.2.17",
     "@types/chrome": "0.0.135",
     "@types/mocha": "8.2.2",
-    "@types/node": "14.14.42",
+    "@types/node": "14.14.43",
     "@types/sinon": "9.0.11",
     "@types/sinon-chai": "3.2.5",
     "@types/sinon-chrome": "2.2.10",
