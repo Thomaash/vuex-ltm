@@ -111,7 +111,7 @@
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
     "@types/chai": "4.2.18",
-    "@types/chrome": "0.0.138",
+    "@types/chrome": "0.0.139",
     "@types/mocha": "8.2.2",
     "@types/node": "14.14.44",
     "@types/sinon": "9.0.11",
