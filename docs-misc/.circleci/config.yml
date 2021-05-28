@@ -7,7 +7,7 @@ version: 2.1
 executors:
   node:
     docker:
-      - image: circleci/node:12.22
+      - image: circleci/node:15.14
     resource_class: small
     working_directory: ~/repo
 
