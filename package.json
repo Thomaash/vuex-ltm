@@ -149,7 +149,7 @@
     "sinon-chrome": "3.0.1",
     "temp-dir": "2.0.0",
     "ts-node": "9.1.1",
-    "tsconfig-paths": "3.9.0",
+    "tsconfig-paths": "3.10.1",
     "typedoc": "0.21.2",
     "typescript": "4.3.5",
     "vue": "2.6.14",
