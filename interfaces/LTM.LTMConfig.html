@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>LocalForage | Vuex - Long Term Memory</title>
+	<title>LTMConfig | Vuex - Long Term Memory</title>
 	<meta name="description" content="Documentation for Vuex - Long Term Memory">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
@@ -2702,19 +2702,28 @@ img {
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
+		<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+			<a href="../classes/LTM.LTM-1.html" class="tsd-kind-icon">LTM</a>
+		</li>
 		<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-			<a href="storages_localforagewrapper.localforage.html" class="tsd-kind-icon">Local<wbr>Forage</a>
+			<a href="LTM.LTMConfig.html" class="tsd-kind-icon">LTMConfig</a>
 			<ul>
-				<li class=" tsd-kind-method tsd-parent-kind-interface">
-					<a href="storages_localforagewrapper.localforage.html#getitem" class="tsd-kind-icon">get<wbr>Item</a>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="LTM.LTMConfig.html#execute" class="tsd-kind-icon">execute</a>
 				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-interface">
-					<a href="storages_localforagewrapper.localforage.html#setitem" class="tsd-kind-icon">set<wbr>Item</a>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="LTM.LTMConfig.html#filter" class="tsd-kind-icon">filter</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="LTM.LTMConfig.html#merge" class="tsd-kind-icon">merge</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="LTM.LTMConfig.html#reduce" class="tsd-kind-icon">reduce</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="LTM.LTMConfig.html#storage" class="tsd-kind-icon">storage</a>
 				</li>
 			</ul>
-		</li>
-		<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-			<a href="../modules/storages_localforagewrapper.html#localforagewrapper" class="tsd-kind-icon">local<wbr>Forage<wbr>Wrapper</a>
 		</li>
 	</ul>
 </nav>
@@ -2724,7 +2733,7 @@ img {
 			<h3>Type parameters</h3>
 			<ul class="tsd-type-parameters">
 				<li>
-					<h4>T</h4>
+					<h4>S</h4>
 				</li>
 			</ul>
 		</section>
@@ -2732,7 +2741,7 @@ img {
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">LocalForage</span>
+					<span class="target">LTMConfig</span>
 				</li>
 			</ul>
 		</section>
@@ -2741,65 +2750,69 @@ img {
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>Methods</h3>
+						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-method tsd-parent-kind-interface"><a href="storages_localforagewrapper.localforage.html#getitem" class="tsd-kind-icon">get<wbr>Item</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-interface"><a href="storages_localforagewrapper.localforage.html#setitem" class="tsd-kind-icon">set<wbr>Item</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="LTM.LTMConfig.html#execute" class="tsd-kind-icon">execute</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="LTM.LTMConfig.html#filter" class="tsd-kind-icon">filter</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="LTM.LTMConfig.html#merge" class="tsd-kind-icon">merge</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="LTM.LTMConfig.html#reduce" class="tsd-kind-icon">reduce</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="LTM.LTMConfig.html#storage" class="tsd-kind-icon">storage</a></li>
 						</ul>
 					</section>
 				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
-			<h2>Methods</h2>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-				<a name="getitem" class="tsd-anchor"></a>
-				<h3>get<wbr>Item</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-					<li class="tsd-signature tsd-kind-icon">get<wbr>Item<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/dd1d363/src/storages/localForageWrapper.ts#L8">storages/localForageWrapper.ts:8</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>key: <span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
+			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="execute" class="tsd-anchor"></a>
+				<h3>execute</h3>
+				<div class="tsd-signature tsd-kind-icon">execute<span class="tsd-signature-symbol">:</span> <a href="../modules/executors.html#Executor" class="tsd-signature-type" data-tsd-kind="Type alias">Executor</a></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/fb572fe/src/LTM.ts#L10">LTM.ts:10</a></li>
+					</ul>
+				</aside>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-				<a name="setitem" class="tsd-anchor"></a>
-				<h3>set<wbr>Item</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-					<li class="tsd-signature tsd-kind-icon">set<wbr>Item<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/dd1d363/src/storages/localForageWrapper.ts#L9">storages/localForageWrapper.ts:9</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>key: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5>data: <span class="tsd-signature-type">T</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="filter" class="tsd-anchor"></a>
+				<h3>filter</h3>
+				<div class="tsd-signature tsd-kind-icon">filter<span class="tsd-signature-symbol">:</span> <a href="../modules/filters.html#Filter" class="tsd-signature-type" data-tsd-kind="Type alias">Filter</a></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/fb572fe/src/LTM.ts#L11">LTM.ts:11</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="merge" class="tsd-anchor"></a>
+				<h3>merge</h3>
+				<div class="tsd-signature tsd-kind-icon">merge<span class="tsd-signature-symbol">:</span> <a href="../modules/mergers.html#Merger" class="tsd-signature-type" data-tsd-kind="Type alias">Merger</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/fb572fe/src/LTM.ts#L12">LTM.ts:12</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="reduce" class="tsd-anchor"></a>
+				<h3>reduce</h3>
+				<div class="tsd-signature tsd-kind-icon">reduce<span class="tsd-signature-symbol">:</span> <a href="../modules/reducers.html#Reducer" class="tsd-signature-type" data-tsd-kind="Type alias">Reducer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/fb572fe/src/LTM.ts#L13">LTM.ts:13</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="storage" class="tsd-anchor"></a>
+				<h3>storage</h3>
+				<div class="tsd-signature tsd-kind-icon">storage<span class="tsd-signature-symbol">:</span> <a href="storages_GenericStorageWrapper.AsyncStorage.html" class="tsd-signature-type" data-tsd-kind="Interface">AsyncStorage</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/Thomaash/vuex-ltm/blob/fb572fe/src/LTM.ts#L14">LTM.ts:14</a></li>
+					</ul>
+				</aside>
 			</section>
 		</section>
 		<footer class="with-border-bottom">
@@ -2816,7 +2829,7 @@ img {
 					<ul class="tsd-legend">
 						<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 						<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-						<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+						<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 					</ul>
 					<ul class="tsd-legend">
 						<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
