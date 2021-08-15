@@ -107,7 +107,7 @@ describe('Executors', (): void => {
         'Beforeunload hanler shoudn’t call preventDefault multiple times'
       )
 
-      handler((e as unknown) as Event)
+      handler(e as unknown as Event)
 
       expect(e.returnValue).to.equal(
         '',

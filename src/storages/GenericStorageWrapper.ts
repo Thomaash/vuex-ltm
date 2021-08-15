@@ -77,7 +77,8 @@ export type ToOuter<Outer, Inner> = (data: Inner) => Outer | null
  * @typeparam Inner - The storage state type.
  */
 export class GenericStorageWrapper<Outer, Inner = Outer>
-  implements AsyncStorage<Outer> {
+  implements AsyncStorage<Outer>
+{
   private key: string
   private setItem: SetItem<Inner>
   private getItem: GetItem<Inner>

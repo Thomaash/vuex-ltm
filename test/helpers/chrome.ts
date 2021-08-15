@@ -7,9 +7,7 @@ interface Result<Data> {
   [key: string]: Data | undefined
 }
 
-export function getTestAsyncStorageFunctions<Data>(
-  type: 'local' | 'sync'
-): {
+export function getTestAsyncStorageFunctions<Data>(type: 'local' | 'sync'): {
   setState(key: string, state: Data): Promise<void>
   getState(key: string): Promise<Data | null>
   removeState(key: string): Promise<void>
