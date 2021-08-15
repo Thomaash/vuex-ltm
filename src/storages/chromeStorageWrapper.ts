@@ -29,9 +29,9 @@ export function chromeStorageWrapper<Outer, Inner = Outer>(
   key: string,
   storage: ChromeStorage<Inner>,
   toInner: ToInner<Outer, Inner> = (data: Outer): Inner =>
-    (data as unknown) as Inner,
+    data as unknown as Inner,
   toOuter: ToOuter<Outer, Inner> = (data: Inner): Outer | null =>
-    (data as unknown) as Outer | null
+    data as unknown as Outer | null
 ): GenericStorageWrapper<Outer, Inner> {
   return new GenericStorageWrapper(
     key,

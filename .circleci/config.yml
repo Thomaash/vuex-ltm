@@ -70,7 +70,11 @@ jobs:
       - attach_workspace:
           at: .
 
+      # Test Renovate updated package versions (i.e. latest)
       - run: npm run test
+
+      # Test various older versions
+      - run: npm run test:versions
 
   gh_pages:
     executor: node
