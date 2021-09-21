@@ -117,7 +117,7 @@
     "@babel/runtime": "7.15.4",
     "@commitlint/cli": "13.1.0",
     "@commitlint/config-conventional": "13.1.0",
-    "@types/chai": "4.2.21",
+    "@types/chai": "4.2.22",
     "@types/chrome": "0.0.157",
     "@types/mocha": "9.0.0",
     "@types/node": "16.6.1",
