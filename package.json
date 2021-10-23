@@ -121,7 +121,7 @@
     "@types/chrome": "0.0.160",
     "@types/mocha": "9.0.0",
     "@types/node": "16.6.1",
-    "@types/sinon": "10.0.4",
+    "@types/sinon": "10.0.5",
     "@types/sinon-chai": "3.2.5",
     "@types/sinon-chrome": "2.2.11",
     "@typescript-eslint/eslint-plugin": "4.33.0",
