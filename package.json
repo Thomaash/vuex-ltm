@@ -160,8 +160,8 @@
     "tsconfig-paths": "3.14.1",
     "typedoc": "0.23.16",
     "typescript": "4.8.4",
-    "vue": "3.2.40",
-    "vuex": "4.0.2"
+    "vue": "3.2.41",
+    "vuex": "4.1.0"
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.16.7",
