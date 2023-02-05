@@ -86,13 +86,13 @@ jobs:
       - run:
           name: Prepare Git
           command: |
-            git config user.email "tom.vycital@gmail.com"
-            git config user.name "Tomáš Vyčítal"
+            git config user.email "$GIT_EMAIL"
+            git config user.name "$GIT_NAME"
 
       - run:
           name: Publish
           command: |
-            npx gh-pages -d 'docs' -m 'docs: update' -t -r "https://Thomaash:$GH_TOKEN@github.com/Thomaash/vuex-ltm.git"
+            npx gh-pages -d 'docs' -m 'docs: update' -t -r "https://$GH_USERNAME:$GH_TOKEN@github.com/Thomaash/vuex-ltm.git"
 
   release:
     executor: node
