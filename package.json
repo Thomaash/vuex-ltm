@@ -136,7 +136,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "gh-pages": "4.0.0",
     "husky": "8.0.3",
-    "jsdom": "19.0.0",
+    "jsdom": "21.1.0",
     "jsdom-global": "3.0.2",
     "lint-staged": "12.5.0",
     "mocha": "10.2.0",
