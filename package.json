@@ -107,6 +107,10 @@
       "text-summary"
     ]
   },
+  "volta": {
+    "node": "18.14.0",
+    "npm": "9.3.1"
+  },
   "devDependencies": {
     "@babel/core": "7.20.12",
     "@babel/plugin-proposal-class-properties": "7.18.6",
