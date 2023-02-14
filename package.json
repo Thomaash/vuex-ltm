@@ -109,7 +109,7 @@
   },
   "volta": {
     "node": "18.14.0",
-    "npm": "9.3.1"
+    "npm": "9.4.2"
   },
   "devDependencies": {
     "@babel/core": "7.20.12",
