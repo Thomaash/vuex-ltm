@@ -3,10 +3,11 @@ import commonjs from '@rollup/plugin-commonjs'
 import copy from 'rollup-plugin-copy'
 import pkg from './package.json'
 import resolve from '@rollup/plugin-node-resolve'
-import tempDir from 'temp-dir'
 import terser from '@rollup/plugin-terser'
 import tsc from 'typescript'
 import typescript from 'rollup-plugin-typescript2'
+import { realpathSync } from 'fs'
+import { tmpdir } from 'os'
 
 function adjustPackageJSON(
   packageJSON,
@@ -64,7 +65,7 @@ const extensions = ['.js', '.ts']
 const esnextPlugins = [
   typescript({
     typescript: tsc,
-    cacheRoot: `${tempDir}/.rpt2_cache`,
+    cacheRoot: `${realpathSync(tmpdir())}/.rpt2_cache`,
   }),
   commonjs(),
   resolve({
