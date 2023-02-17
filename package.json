@@ -159,7 +159,7 @@
     "sinon": "15.0.1",
     "sinon-chai": "3.7.0",
     "sinon-chrome": "3.0.1",
-    "temp-dir": "2.0.0",
+    "temp-dir": "3.0.0",
     "ts-node": "10.9.1",
     "tsconfig-paths": "4.1.2",
     "typedoc": "0.23.25",
