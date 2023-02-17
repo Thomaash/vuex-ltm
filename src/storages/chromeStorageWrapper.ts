@@ -4,10 +4,10 @@ import {
   ToOuter,
 } from './GenericStorageWrapper'
 
-interface StorageItems<T> {
+export interface StorageItems<T> {
   [key: string]: T
 }
-interface ChromeStorage<T> {
+export interface ChromeStorage<T> {
   get(key: string[], callback: (result: StorageItems<T>) => void): void
   set(data: StorageItems<T>, callback: () => void): void
 }

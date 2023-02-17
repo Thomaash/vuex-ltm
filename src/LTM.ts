@@ -36,11 +36,11 @@ export class LTM<S> {
   private rejectReady: () => void = (): void => {}
 
   /**
-   * @param execute - [[Executor]] that controls when and if the state will be persisted (e.g. to prevent bursts).
-   * @param filter - [[Filter]] that decides whether a mutation will trigger persisting.
-   * @param merge - [[Merger]] that merges loaded state into Vuex.
-   * @param reduce - [[Reducer]] that picks which parts of the state will be persisted.
-   * @param storage - [[AsyncStorage]] that saves state data to the store.
+   * @param execute - {@link Executor} that controls when and if the state will be persisted (e.g. to prevent bursts).
+   * @param filter - {@link Filter} that decides whether a mutation will trigger persisting.
+   * @param merge - {@link Merger} that merges loaded state into Vuex.
+   * @param reduce - {@link Reducer} that picks which parts of the state will be persisted.
+   * @param storage - {@link AsyncStorage} that saves state data to the store.
    */
   public constructor({
     execute,
@@ -92,7 +92,7 @@ export class LTM<S> {
   }
 
   /**
-   * Vuex plugin (i.e. new Vuex.Store({ plugins: [ltm.plugin]})).
+   * Vuex plugin (i.e. new Vuex.Store(\{ plugins: [ltm.plugin] \})).
    */
   public get plugin(): Plugin<S> {
     return (store: Store<S>): void => {

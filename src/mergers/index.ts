@@ -46,7 +46,7 @@ export function shallowMerge<S>(loaded: Partial<S>, previous: S): S {
 }
 
 /**
- * Deep merge the states using [[deepmerge]] library (defaults except that arrays are replaced).
+ * Deep merge the states using deepmerge library (defaults except that arrays are replaced).
  *
  * @param loaded - State just loaded from the storage.
  * @param previous - State present in Vuex (probably defaults).
@@ -54,7 +54,7 @@ export function shallowMerge<S>(loaded: Partial<S>, previous: S): S {
  * @returns State that will be put into Vuex.
  *
  * @remarks
- * See [[configurableDeepMerge]] for customizations.
+ * See {@link configurableDeepMerge} for customizations.
  *
  * @public
  */
@@ -66,11 +66,11 @@ export function deepMerge<S>(loaded: Partial<S>, previous: S): S {
 }
 
 /**
- * Builds merger that deep merges the states using [[deepmerge]] library with custom options.
+ * Builds merger that deep merges the states using deepmerge library with custom options.
  *
  * @param options - Options to be passed to the library.
  *
- * @returns Merger that can be passed to [[LTM]].
+ * @returns Merger that can be passed to {@link LTM}.
  *
  * @public
  */

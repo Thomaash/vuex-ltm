@@ -1,10 +1,10 @@
 /**
- * Storage interface that can be passed to [[LTM]].
+ * Storage interface that can be passed to {@link LTM}.
  *
  * @typeparam T - The storage state type.
  *
  * @remarks
- * Valid storage can also be built using [[GenericStorageWrapper]].
+ * Valid storage can also be built using {@link GenericStorageWrapper}.
  */
 export interface AsyncStorage<T> {
   save(obj: T): Promise<void>
@@ -71,7 +71,7 @@ export type ToInner<Outer, Inner> = (data: Outer) => Inner
 export type ToOuter<Outer, Inner> = (data: Inner) => Outer | null
 
 /**
- * Builds a custom storage that can be passed to [[LTM]].
+ * Builds a custom storage that can be passed to {@link LTM}.
  *
  * @typeparam Outer - The Vuex state type.
  * @typeparam Inner - The storage state type.

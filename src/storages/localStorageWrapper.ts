@@ -5,7 +5,7 @@ import {
 } from './GenericStorageWrapper'
 
 /**
- * Required subset of localStorage API by [[localStorageWrapper]].
+ * Required subset of localStorage API by {@link localStorageWrapper}.
  *
  * @public
  */

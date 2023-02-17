@@ -17,10 +17,10 @@ export const simplyExecute: Executor = (f): void => {
 }
 
 /**
- * Configures an [[Executor]] that delays state persisting some time after the last change.
+ * Configures an {@link Executor} that delays state persisting some time after the last change.
  *
  * @param ms - Time to wait before persisting in milliseconds.
- * @returns Configured [[Executor]]
+ * @returns Configured {@link Executor}
  *
  * @public
  */
