@@ -1,12 +1,12 @@
-import babel from 'rollup-plugin-babel'
-import commonjs from 'rollup-plugin-commonjs'
+import babel from '@rollup/plugin-babel'
+import commonjs from '@rollup/plugin-commonjs'
 import copy from 'rollup-plugin-copy'
 import pkg from './package.json'
-import resolve from 'rollup-plugin-node-resolve'
+import resolve from '@rollup/plugin-node-resolve'
 import tempDir from 'temp-dir'
+import terser from '@rollup/plugin-terser'
 import tsc from 'typescript'
 import typescript from 'rollup-plugin-typescript2'
-import { terser } from 'rollup-plugin-terser'
 
 function adjustPackageJSON(
   packageJSON,
@@ -76,7 +76,7 @@ const es5Plugins = [
   babel({
     extensions,
     include: ['src/**/*'],
-    runtimeHelpers: true,
+    babelHelpers: 'runtime',
   }),
 ]
 const es5MinPlugins = [...es5Plugins, terser()]
@@ -84,6 +84,7 @@ const es5MinPlugins = [...es5Plugins, terser()]
 export default [
   // new
   {
+    strictDeprecations: true,
     input,
     output: [
       {
@@ -129,6 +130,7 @@ export default [
     ],
   },
   {
+    strictDeprecations: true,
     input,
     output: [
       {
@@ -172,6 +174,7 @@ export default [
     ],
   },
   {
+    strictDeprecations: true,
     input,
     output: [
       {
@@ -189,6 +192,7 @@ export default [
 
   // old
   {
+    strictDeprecations: true,
     input,
     output: [
       {
@@ -207,6 +211,7 @@ export default [
     ],
   },
   {
+    strictDeprecations: true,
     input,
     output: ['amd', 'cjs', 'iife', 'umd'].map((format) => ({
       file: `dist/es5/${format}.js`,
@@ -216,6 +221,7 @@ export default [
     plugins: es5Plugins,
   },
   {
+    strictDeprecations: true,
     input,
     output: ['amd', 'cjs', 'iife', 'umd'].map((format) => ({
       file: `dist/es5/${format}.min.js`,
