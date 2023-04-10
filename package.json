@@ -30,7 +30,7 @@
     "build:docs": "typedoc --excludePrivate --excludeExternals --name \"Vuex - Long Term Memory\" --out docs src && copyfiles --all --up 1 \"docs-misc/.circleci/config.yml\" \"docs\"",
     "build:types": "tsc --project tsconfig.types.json",
     "check": "es-check es5 dist/es5/*.js",
-    "clean": "rimraf \"{coverage,dist,docs,releases}/{*,.*}\"",
+    "clean": "rimraf --glob \"{coverage,dist,docs,releases}/{*,.*}\"",
     "fix": "npm run lint -- --fix",
     "lint": "eslint --ext .js,.ts src test *.js",
     "prepare": "husky install",
