@@ -156,7 +156,7 @@
     "rollup": "3.25.1",
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-typescript2": "0.34.1",
-    "sinon": "15.1.2",
+    "sinon": "15.2.0",
     "sinon-chai": "3.7.0",
     "sinon-chrome": "3.0.1",
     "ts-node": "10.9.1",
