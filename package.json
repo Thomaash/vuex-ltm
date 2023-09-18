@@ -108,7 +108,7 @@
     ]
   },
   "volta": {
-    "node": "18.17.1",
+    "node": "18.18.0",
     "npm": "10.1.0"
   },
   "devDependencies": {
