@@ -140,7 +140,7 @@
     "es-check": "7.1.1",
     "eslint": "8.50.0",
     "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-mocha": "10.1.0",
+    "eslint-plugin-mocha": "10.2.0",
     "eslint-plugin-prettier": "5.0.0",
     "gh-pages": "6.0.0",
     "husky": "8.0.3",
