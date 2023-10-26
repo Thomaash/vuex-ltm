@@ -49,7 +49,8 @@
     "test:versions:09": "npm install vuex@4.0.0 vue@3.0.2 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit",
     "test:versions:10": "npm install vuex@4.0.2 vue@3.0.11 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit",
     "test:versions:11": "npm install vuex@4.0.2 vue@3.1.5 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit",
-    "test:versions:12": "npm install vuex@4.0.2 vue@3.2.2 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit"
+    "test:versions:12": "npm install vuex@4.0.2 vue@3.2.2 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit",
+    "test:versions:13": "npm install vuex@4.1.0 vue@3.3.7 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit"
   },
   "babel": {
     "presets": [
