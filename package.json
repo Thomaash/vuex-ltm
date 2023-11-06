@@ -130,7 +130,7 @@
     "@types/chrome": "0.0.249",
     "@types/mocha": "10.0.3",
     "@types/node": "20.8.10",
-    "@types/sinon": "10.0.20",
+    "@types/sinon": "17.0.0",
     "@types/sinon-chai": "3.2.11",
     "@types/sinon-chrome": "2.2.13",
     "@typescript-eslint/eslint-plugin": "6.9.1",
