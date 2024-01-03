@@ -164,7 +164,7 @@
     "tsconfig-paths": "4.2.0",
     "typedoc": "0.25.6",
     "typescript": "5.3.3",
-    "vue": "3.4.3",
+    "vue": "3.4.4",
     "vuex": "4.1.0"
   },
   "dependencies": {
