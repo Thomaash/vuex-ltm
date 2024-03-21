@@ -163,7 +163,7 @@
     "ts-node": "10.9.2",
     "tsconfig-paths": "4.2.0",
     "typedoc": "0.25.12",
-    "typescript": "5.4.2",
+    "typescript": "5.4.3",
     "vue": "3.4.21",
     "vuex": "4.1.0"
   },
