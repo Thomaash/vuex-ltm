@@ -127,7 +127,7 @@
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-terser": "0.4.4",
     "@types/chai": "4.3.17",
-    "@types/chrome": "0.0.269",
+    "@types/chrome": "0.0.270",
     "@types/mocha": "10.0.7",
     "@types/node": "20.14.12",
     "@types/sinon": "17.0.3",
