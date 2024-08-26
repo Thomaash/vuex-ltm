@@ -162,7 +162,7 @@
     "sinon-chrome": "3.0.1",
     "ts-node": "10.9.2",
     "tsconfig-paths": "4.2.0",
-    "typedoc": "0.26.5",
+    "typedoc": "0.26.6",
     "typescript": "5.5.4",
     "vue": "3.4.34",
     "vuex": "4.1.0"
