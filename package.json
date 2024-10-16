@@ -126,7 +126,7 @@
     "@rollup/plugin-commonjs": "25.0.8",
     "@rollup/plugin-node-resolve": "15.3.0",
     "@rollup/plugin-terser": "0.4.4",
-    "@types/chai": "4.3.19",
+    "@types/chai": "4.3.20",
     "@types/chrome": "0.0.271",
     "@types/mocha": "10.0.8",
     "@types/node": "20.16.6",
