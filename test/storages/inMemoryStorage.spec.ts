@@ -13,7 +13,7 @@ describe('Storages', function (): void {
 
       const loaded = await storage.load()
 
-      expect(loaded).to.be.null
+      expect(loaded).to.equal(null)
     })
 
     it('Save and load', async function (): Promise<void> {
