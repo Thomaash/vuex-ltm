@@ -50,7 +50,8 @@
     "test:versions:10": "npm install vuex@4.0.2 vue@3.0.11 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit",
     "test:versions:11": "npm install vuex@4.0.2 vue@3.1.5 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit",
     "test:versions:12": "npm install vuex@4.0.2 vue@3.2.2 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit",
-    "test:versions:13": "npm install vuex@4.1.0 vue@3.3.7 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit"
+    "test:versions:13": "npm install vuex@4.1.0 vue@3.3.7 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit",
+    "test:versions:14": "npm install vuex@4.1.0 vue@3.5.13 && cross-env \"TS_NODE_PROJECT=./tsconfig.test.json\" mocha --exit"
   },
   "babel": {
     "presets": [
@@ -69,9 +70,7 @@
           "core-js": 3,
           "regenerator": true
         }
-      ],
-      "@babel/proposal-class-properties",
-      "@babel/proposal-object-rest-spread"
+      ]
     ]
   },
   "mocha": {
@@ -113,13 +112,11 @@
     "npm": "10.9.2"
   },
   "devDependencies": {
-    "@babel/core": "7.26.0",
-    "@babel/plugin-proposal-class-properties": "7.18.6",
-    "@babel/plugin-proposal-object-rest-spread": "7.20.7",
-    "@babel/plugin-transform-runtime": "7.25.9",
-    "@babel/preset-env": "7.26.0",
-    "@babel/preset-typescript": "7.26.0",
-    "@babel/runtime": "7.26.0",
+    "@babel/core": "7.26.10",
+    "@babel/plugin-transform-runtime": "7.26.10",
+    "@babel/preset-env": "7.26.9",
+    "@babel/preset-typescript": "7.27.0",
+    "@babel/runtime": "7.27.0",
     "@commitlint/cli": "18.6.1",
     "@commitlint/config-conventional": "18.6.3",
     "@rollup/plugin-babel": "6.0.4",
@@ -127,10 +124,10 @@
     "@rollup/plugin-node-resolve": "15.3.1",
     "@rollup/plugin-terser": "0.4.4",
     "@types/chai": "4.3.20",
-    "@types/chrome": "0.0.293",
+    "@types/chrome": "0.0.317",
     "@types/mocha": "10.0.10",
-    "@types/node": "20.17.12",
-    "@types/sinon": "17.0.3",
+    "@types/node": "20.17.31",
+    "@types/sinon": "17.0.4",
     "@types/sinon-chai": "3.2.12",
     "@types/sinon-chrome": "2.2.15",
     "@typescript-eslint/eslint-plugin": "6.21.0",
@@ -142,19 +139,19 @@
     "eslint": "8.57.1",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-mocha": "10.5.0",
-    "eslint-plugin-prettier": "5.2.1",
+    "eslint-plugin-prettier": "5.2.6",
     "gh-pages": "6.3.0",
     "husky": "8.0.3",
     "jsdom": "23.2.0",
     "jsdom-global": "3.0.2",
-    "lint-staged": "15.3.0",
+    "lint-staged": "15.5.1",
     "mocha": "10.8.2",
     "mock-local-storage": "1.1.24",
     "npm-run-all": "4.1.5",
     "nyc": "15.1.0",
-    "prettier": "3.4.2",
+    "prettier": "3.5.3",
     "rimraf": "5.0.10",
-    "rollup": "4.30.1",
+    "rollup": "4.40.0",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-typescript2": "0.36.0",
     "sinon": "17.0.2",
@@ -162,13 +159,13 @@
     "sinon-chrome": "3.0.1",
     "ts-node": "10.9.2",
     "tsconfig-paths": "4.2.0",
-    "typedoc": "0.27.6",
-    "typescript": "5.7.3",
+    "typedoc": "0.28.3",
+    "typescript": "5.8.3",
     "vue": "3.5.13",
     "vuex": "4.1.0"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.22.15",
+    "@babel/runtime-corejs3": "^7.27.0",
     "deepmerge": "^4.3.1",
     "localforage": "^1.10.0"
   },
