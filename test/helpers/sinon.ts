@@ -1,9 +1,9 @@
-import chai from 'chai'
+import { expect, use } from 'chai'
 import sinon from 'sinon'
 import sinonChai from 'sinon-chai'
 
-chai.use(sinonChai)
-export const expect = chai.expect
+use(sinonChai)
+export { expect }
 
 beforeEach(function (): void {
   this.sinon = sinon.createSandbox()
