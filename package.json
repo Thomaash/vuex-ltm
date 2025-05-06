@@ -144,7 +144,7 @@
     "husky": "9.1.7",
     "jsdom": "26.1.0",
     "jsdom-global": "3.0.2",
-    "lint-staged": "15.5.1",
+    "lint-staged": "15.5.2",
     "mocha": "11.2.2",
     "mock-local-storage": "1.1.24",
     "npm-run-all2": "7.0.2",
