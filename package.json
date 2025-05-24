@@ -145,7 +145,7 @@
     "jsdom": "26.1.0",
     "jsdom-global": "3.0.2",
     "lint-staged": "15.5.2",
-    "mocha": "11.4.0",
+    "mocha": "11.5.0",
     "mock-local-storage": "1.1.24",
     "npm-run-all2": "7.0.2",
     "nyc": "17.1.0",
