@@ -149,7 +149,7 @@
     "mock-local-storage": "1.1.24",
     "npm-run-all2": "7.0.2",
     "nyc": "17.1.0",
-    "prettier": "3.6.1",
+    "prettier": "3.6.2",
     "rimraf": "6.0.1",
     "rollup": "4.44.1",
     "rollup-plugin-copy": "3.5.0",
