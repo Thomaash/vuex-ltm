@@ -135,7 +135,7 @@
     "chai": "6.2.0",
     "copyfiles": "2.4.1",
     "cross-env": "10.1.0",
-    "es-check": "9.3.1",
+    "es-check": "9.4.4",
     "eslint": "9.36.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-mocha": "11.1.0",
