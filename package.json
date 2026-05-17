@@ -107,10 +107,6 @@
       "text-summary"
     ]
   },
-  "volta": {
-    "node": "24.14.0",
-    "npm": "11.11.1"
-  },
   "devDependencies": {
     "@babel/core": "7.29.0",
     "@babel/plugin-transform-runtime": "7.29.0",
