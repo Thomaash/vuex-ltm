@@ -144,7 +144,7 @@
     "mocha": "11.7.5",
     "mock-local-storage": "1.1.24",
     "npm-run-all2": "8.0.4",
-    "nyc": "17.1.0",
+    "nyc": "18.0.0",
     "prettier": "3.6.2",
     "rimraf": "6.1.3",
     "rollup": "4.59.0",
