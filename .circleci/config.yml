@@ -63,6 +63,15 @@ jobs:
 
       - run: npm run lint
 
+  style:
+    executor: node
+
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run: npm run style
+
   test:
     executor: node
 
@@ -130,6 +139,10 @@ workflows:
           requires:
             - prepare
 
+      - style:
+          requires:
+            - prepare
+
       - test:
           requires:
             - prepare
@@ -139,6 +152,7 @@ workflows:
             - prepare
             - build
             - lint
+            - style
             - test
           filters:
             branches:
@@ -150,6 +164,7 @@ workflows:
             - prepare
             - build
             - lint
+            - style
             - test
           filters:
             branches:

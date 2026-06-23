@@ -1,0 +1,6 @@
+/.nyc_output/
+/coverage/
+/dist/
+/docs/
+/releases/
+node_modules/
