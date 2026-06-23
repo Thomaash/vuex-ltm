@@ -1,7 +1,7 @@
 {
-    "compilerOptions": {
-        "allowJs": true
-    },
-    "extends": "./tsconfig.json",
-    "include": ["*.js", "*.mjs", "*.ts", "src", "test"]
+  "compilerOptions": {
+    "allowJs": true
+  },
+  "extends": "./tsconfig.json",
+  "include": ["*.js", "*.mjs", "*.ts", "src", "test"]
 }

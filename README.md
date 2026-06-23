@@ -7,16 +7,16 @@ Documentation: https://thomaash.github.io/vuex-ltm/
 ## Simple example
 
 ```javascript
-import Vue from "vue"
-import Vuex from "vuex"
+import Vue from 'vue'
+import Vuex from 'vuex'
 import {
   LTM,
   dummyFilter,
   localStorageWrapper,
   replace,
   saveAll,
-  simplyExecute
-} from "vuex-ltm"
+  simplyExecute,
+} from 'vuex-ltm'
 
 const ltm = new LTM({
   // Persist immediatelly (even multiple times per second).
@@ -28,13 +28,13 @@ const ltm = new LTM({
   // Persist the whole state.
   reduce: saveAll,
   // Persist into the localStorage as the 'app-state' item.
-  storage: localStorageWrapper("app-state", localStorage)
+  storage: localStorageWrapper('app-state', localStorage),
 })
 
 Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {},
-  plugins: [ltm.plugin]
+  plugins: [ltm.plugin],
 })
 ```
 
@@ -100,16 +100,16 @@ Documentation: https://thomaash.github.io/vuex-ltm/
 ## Simple example
 
 ```javascript
-import Vue from "vue"
-import Vuex from "vuex"
+import Vue from 'vue'
+import Vuex from 'vuex'
 import {
   LTM,
   dummyFilter,
   localStorageWrapper,
   replace,
   saveAll,
-  simplyExecute
-} from "vuex-ltm"
+  simplyExecute,
+} from 'vuex-ltm'
 
 const ltm = new LTM({
   // Persist immediatelly (even multiple times per second).
@@ -121,13 +121,13 @@ const ltm = new LTM({
   // Persist the whole state.
   reduce: saveAll,
   // Persist into the localStorage as the 'app-state' item.
-  storage: localStorageWrapper("app-state", localStorage)
+  storage: localStorageWrapper('app-state', localStorage),
 })
 
 Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {},
-  plugins: [ltm.plugin]
+  plugins: [ltm.plugin],
 })
 ```
 

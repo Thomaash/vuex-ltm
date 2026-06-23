@@ -1,20 +1,20 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "declaration": false,
-        "esModuleInterop": true,
-        "module": "es2015",
-        "moduleResolution": "node",
-        "outDir": "dist/lib",
-        "paths": {
-            "@/*": ["src/*"],
-            "#/*": ["test/*"]
-        },
-        "sourceMap": true,
-        "strict": true,
-        "target": "esnext",
-        "typeRoots": ["./types", "node_modules/@types"]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": false,
+    "esModuleInterop": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "outDir": "dist/lib",
+    "paths": {
+      "@/*": ["src/*"],
+      "#/*": ["test/*"]
     },
-    "exclude": ["node_modules", "**/__tests__/*"],
-    "include": ["src", "test"]
+    "sourceMap": true,
+    "strict": true,
+    "target": "esnext",
+    "typeRoots": ["./types", "node_modules/@types"]
+  },
+  "exclude": ["node_modules", "**/__tests__/*"],
+  "include": ["src", "test"]
 }
