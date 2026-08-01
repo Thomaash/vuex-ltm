@@ -113,7 +113,7 @@ jobs:
       - run:
           name: Prepare NPM
           command: |
-            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            export NPM_ID_TOKEN=$(circleci run oidc get --claims '{"aud": "npm:registry.npmjs.org"}')
       - run:
           name: Prepare Git
           command: |
