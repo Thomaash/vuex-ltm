@@ -1,0 +1,56 @@
+diff --git a/node_modules/@semantic-release/npm/lib/definitions/constants.js b/node_modules/@semantic-release/npm/lib/definitions/constants.js
+index 6c651a6..2bf36e7 100644
+--- a/node_modules/@semantic-release/npm/lib/definitions/constants.js
++++ b/node_modules/@semantic-release/npm/lib/definitions/constants.js
+@@ -2,3 +2,4 @@ export const OFFICIAL_REGISTRY = "https://registry.npmjs.org/";
+ 
+ export const GITHUB_ACTIONS_PROVIDER_NAME = "GitHub Actions";
+ export const GITLAB_PIPELINES_PROVIDER_NAME = "GitLab CI/CD";
++export const CIRCLECI_PROVIDER_NAME = "CircleCI";
+diff --git a/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js b/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js
+index 899560b..44d1831 100644
+--- a/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js
++++ b/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js
+@@ -1,8 +1,13 @@
+ import { getIDToken } from "@actions/core";
+ import envCi from "env-ci";
++import { promisify } from "util";
++import { exec } from "child_process";
++
++const execAsync = promisify(exec);
+ 
+ import {
+   OFFICIAL_REGISTRY,
++  CIRCLECI_PROVIDER_NAME,
+   GITHUB_ACTIONS_PROVIDER_NAME,
+   GITLAB_PIPELINES_PROVIDER_NAME,
+ } from "../definitions/constants.js";
+@@ -57,6 +62,18 @@ async function exchangeGitlabPipelinesToken(packageName, logger) {
+   return exchangeIdToken(idToken, packageName, logger);
+ }
+ 
++async function exchangeCircleCIToken(packageName, logger) {
++  const idToken = process.env.NPM_ID_TOKEN;
++
++  logger.log("Verifying OIDC context for publishing from CircleCI");
++
++  if (!idToken) {
++    return undefined;
++  }
++
++  return exchangeIdToken(idToken, packageName, logger);
++}
++
+ export default function exchangeToken(pkg, { logger }) {
+   const { name: ciProviderName } = envCi();
+ 
+@@ -68,5 +85,9 @@ export default function exchangeToken(pkg, { logger }) {
+     return exchangeGitlabPipelinesToken(pkg.name, logger);
+   }
+ 
++  if (CIRCLECI_PROVIDER_NAME === ciProviderName) {
++    return exchangeCircleCIToken(pkg.name, logger);
++  }
++
+   return undefined;
+ }
