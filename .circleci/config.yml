@@ -111,10 +111,6 @@ jobs:
           at: .
 
       - run:
-          name: Prepare NPM
-          command: |
-            export NPM_ID_TOKEN=$(circleci run oidc get --claims '{"aud": "npm:registry.npmjs.org"}')
-      - run:
           name: Prepare Git
           command: |
             git config user.email "tom.vycital@gmail.com"

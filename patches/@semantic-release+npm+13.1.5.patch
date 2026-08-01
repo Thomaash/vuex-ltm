@@ -9,10 +9,16 @@ index 6c651a6..ad9d5d4 100644
  export const GITHUB_ACTIONS_PROVIDER_NAME = "GitHub Actions";
  export const GITLAB_PIPELINES_PROVIDER_NAME = "GitLab CI/CD";
 diff --git a/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js b/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js
-index 899560b..6ecc5f9 100644
+index 899560b..9c5a896 100644
 --- a/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js
 +++ b/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js
-@@ -3,6 +3,7 @@ import envCi from "env-ci";
+@@ -1,8 +1,13 @@
+ import { getIDToken } from "@actions/core";
+ import envCi from "env-ci";
++import { promisify } from "util";
++import { exec } from "child_process";
++
++const execAsync = promisify(exec);
  
  import {
    OFFICIAL_REGISTRY,
@@ -20,26 +26,33 @@ index 899560b..6ecc5f9 100644
    GITHUB_ACTIONS_PROVIDER_NAME,
    GITLAB_PIPELINES_PROVIDER_NAME,
  } from "../definitions/constants.js";
-@@ -45,6 +46,18 @@ async function exchangeGithubActionsToken(packageName, logger) {
-   return exchangeIdToken(idToken, packageName, logger);
+@@ -28,6 +33,25 @@ async function exchangeIdToken(idToken, packageName, logger) {
+   return undefined;
  }
  
 +async function exchangeCircleCIToken(packageName, logger) {
-+  const idToken = process.env.NPM_ID_TOKEN;
++  let idToken;
 +
 +  logger.log("Verifying OIDC context for publishing from CircleCI");
 +
-+  if (!idToken) {
++  try {
++    const { stdout } = await execAsync(
++      'circleci run oidc get --claims \'{"aud": "npm:registry.npmjs.org"}\'',
++    );
++    idToken = stdout.trim();
++  } catch (e) {
++    logger.log(`Retrieval of CircleCI OIDC token failed: ${e.message}`);
++
 +    return undefined;
 +  }
 +
 +  return exchangeIdToken(idToken, packageName, logger);
 +}
 +
- async function exchangeGitlabPipelinesToken(packageName, logger) {
-   const idToken = process.env.NPM_ID_TOKEN;
+ async function exchangeGithubActionsToken(packageName, logger) {
+   let idToken;
  
-@@ -60,6 +73,10 @@ async function exchangeGitlabPipelinesToken(packageName, logger) {
+@@ -60,6 +84,10 @@ async function exchangeGitlabPipelinesToken(packageName, logger) {
  export default function exchangeToken(pkg, { logger }) {
    const { name: ciProviderName } = envCi();
  
