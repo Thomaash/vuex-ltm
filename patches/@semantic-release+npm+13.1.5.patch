@@ -9,7 +9,7 @@ index 6c651a6..ad9d5d4 100644
  export const GITHUB_ACTIONS_PROVIDER_NAME = "GitHub Actions";
  export const GITLAB_PIPELINES_PROVIDER_NAME = "GitLab CI/CD";
 diff --git a/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js b/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js
-index 899560b..b1781e8 100644
+index 899560b..ed57c09 100644
 --- a/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js
 +++ b/node_modules/@semantic-release/npm/lib/trusted-publishing/token-exchange.js
 @@ -1,8 +1,13 @@
@@ -26,24 +26,16 @@ index 899560b..b1781e8 100644
    GITHUB_ACTIONS_PROVIDER_NAME,
    GITLAB_PIPELINES_PROVIDER_NAME,
  } from "../definitions/constants.js";
-@@ -28,6 +33,26 @@ async function exchangeIdToken(idToken, packageName, logger) {
+@@ -28,6 +33,18 @@ async function exchangeIdToken(idToken, packageName, logger) {
    return undefined;
  }
  
 +async function exchangeCircleCIToken(packageName, logger) {
-+  let idToken;
++  const idToken = process.env.NPM_ID_TOKEN;
 +
 +  logger.log("Verifying OIDC context for publishing from CircleCI");
 +
-+  try {
-+    const { stdout } = await execAsync(
-+      'circleci run oidc get --claims \'{"aud": "npm:registry.npmjs.org"}\'',
-+    );
-+    idToken = stdout;
-+    process.env.NPM_ID_TOKEN = idToken;
-+  } catch (e) {
-+    logger.log(`Retrieval of CircleCI OIDC token failed: ${e.message}`);
-+
++  if (!idToken) {
 +    return undefined;
 +  }
 +
@@ -53,7 +45,7 @@ index 899560b..b1781e8 100644
  async function exchangeGithubActionsToken(packageName, logger) {
    let idToken;
  
-@@ -60,6 +85,10 @@ async function exchangeGitlabPipelinesToken(packageName, logger) {
+@@ -60,6 +77,10 @@ async function exchangeGitlabPipelinesToken(packageName, logger) {
  export default function exchangeToken(pkg, { logger }) {
    const { name: ciProviderName } = envCi();
  
