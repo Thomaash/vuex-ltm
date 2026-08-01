@@ -17,8 +17,8 @@ export interface LocalForage<T> {
  * @param toInner - Custom conversion from state object to storage object (default is pass through).
  * @param toOuter - Custom conversion from storage object to state object (default is pass through).
  *
- * @typeparam Outer - The Vuex state type.
- * @typeparam Inner - The storage state type.
+ * @typeParam Outer - The Vuex state type.
+ * @typeParam Inner - The storage state type.
  *
  * @public
  */

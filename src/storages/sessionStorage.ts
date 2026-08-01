@@ -12,8 +12,8 @@ import { localStorageWrapper } from './localStorageWrapper'
  * @param toInner - Custom conversion from state object to string (default is JSON.stringify).
  * @param toOuter - Custom conversion from string to state object (default is JSON.parse).
  *
- * @typeparam Outer - The Vuex state type.
- * @typeparam Inner - The storage state type.
+ * @typeParam Outer - The Vuex state type.
+ * @typeParam Inner - The storage state type.
  *
  * @public
  */

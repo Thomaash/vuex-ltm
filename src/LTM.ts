@@ -7,17 +7,32 @@ import { Merger } from './mergers'
 import { Reducer } from './reducers'
 
 export interface LTMConfig<S> {
+  /**
+   * Controls when and if the state will be persisted (e.g. to prevent bursts).
+   */
   execute: Executor
+  /**
+   * Decides whether a mutation will trigger persisting.
+   */
   filter: Filter
+  /**
+   * Merges loaded state into Vuex.
+   */
   merge: Merger<S>
+  /**
+   * Picks which parts of the state will be persisted.
+   */
   reduce: Reducer<S>
+  /**
+   * Saves state data to the store.
+   */
   storage: AsyncStorage<Partial<S>>
 }
 
 /**
  * Long Term Memory main class.
  *
- * @typeparam S - Vuex state type.
+ * @typeParam S - Vuex state type.
  *
  * @public
  */
@@ -36,11 +51,7 @@ export class LTM<S> {
   private rejectReady: () => void = (): void => {}
 
   /**
-   * @param execute - {@link Executor} that controls when and if the state will be persisted (e.g. to prevent bursts).
-   * @param filter - {@link Filter} that decides whether a mutation will trigger persisting.
-   * @param merge - {@link Merger} that merges loaded state into Vuex.
-   * @param reduce - {@link Reducer} that picks which parts of the state will be persisted.
-   * @param storage - {@link AsyncStorage} that saves state data to the store.
+   * @param options - Configuration options for state persistence.
    */
   public constructor({
     execute,

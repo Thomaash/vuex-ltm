@@ -6,7 +6,7 @@ import { GenericStorageWrapper } from './GenericStorageWrapper'
  * @remarks
  * Useful mainly for testing and development as it doesn't persist anything.
  *
- * @typeparam Outer - The Vuex state type.
+ * @typeParam Outer - The Vuex state type.
  *
  * @public
  */

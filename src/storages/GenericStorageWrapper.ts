@@ -1,7 +1,7 @@
 /**
  * Storage interface that can be passed to {@link LTM}.
  *
- * @typeparam T - The storage state type.
+ * @typeParam T - The storage state type.
  *
  * @remarks
  * Valid storage can also be built using {@link GenericStorageWrapper}.
@@ -17,7 +17,7 @@ export interface AsyncStorage<T> {
  * @param key - String identifying persisted state (like in localStorage.setItem(key, …)).
  * @param data - The state to be persisted.
  *
- * @typeparam T - The storage state type.
+ * @typeParam T - The storage state type.
  *
  * @returns Shouldn't return or resolve returned promise before the state is persisted.
  *
@@ -32,7 +32,7 @@ export type SetItem<T> =
  *
  * @param key - String identifying persisted state (like in localStorage.getItem(key)).
  *
- * @typeparam T - The storage state type.
+ * @typeParam T - The storage state type.
  *
  * @returns The persisted state or null if no state exists in the storage. May return a promise resolving to the forementioned value.
  *
@@ -47,8 +47,8 @@ export type GetItem<T> =
  *
  * @param data - The state data in outer format.
  *
- * @typeparam Outer - The Vuex state type.
- * @typeparam Inner - The storage state type.
+ * @typeParam Outer - The Vuex state type.
+ * @typeParam Inner - The storage state type.
  *
  * @returns The state data in inner format.
  *
@@ -61,8 +61,8 @@ export type ToInner<Outer, Inner> = (data: Outer) => Inner
  *
  * @param data - The state data in inner format.
  *
- * @typeparam Outer - The Vuex state type.
- * @typeparam Inner - The storage state type.
+ * @typeParam Outer - The Vuex state type.
+ * @typeParam Inner - The storage state type.
  *
  * @returns The state data in outer format.
  *
@@ -73,8 +73,8 @@ export type ToOuter<Outer, Inner> = (data: Inner) => Outer | null
 /**
  * Builds a custom storage that can be passed to {@link LTM}.
  *
- * @typeparam Outer - The Vuex state type.
- * @typeparam Inner - The storage state type.
+ * @typeParam Outer - The Vuex state type.
+ * @typeParam Inner - The storage state type.
  */
 export class GenericStorageWrapper<Outer, Inner = Outer>
   implements AsyncStorage<Outer>
