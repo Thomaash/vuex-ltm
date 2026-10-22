@@ -146,7 +146,7 @@
     "lint-staged": "17.6.0",
     "mocha": "12.0.3",
     "mock-local-storage": "1.1.24",
-    "npm-run-all2": "9.0.3",
+    "npm-run-all2": "9.0.4",
     "nyc": "18.0.0",
     "prettier": "3.6.2",
     "rimraf": "6.1.3",
