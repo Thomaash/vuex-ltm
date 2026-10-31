@@ -174,7 +174,7 @@
   },
   "overrides": {
     "rollup-plugin-copy": {
-      "globby": "^11.0.0"
+      "globby": "^16.0.0"
     }
   }
 }
